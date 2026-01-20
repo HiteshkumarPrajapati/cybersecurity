@@ -51,7 +51,7 @@ aligned with **NIST Cybersecurity Framework, NIST SP 800-53, and OWASP Top 10.**
 
 - Supply chain compromise
 
-> ## New Secure Infrastructure – Solution Overview
+## **New Secure Infrastructure – Solution Overview**
 
 The new infrastructure was redesigned with security-by-design and defense-in-depth principles. All remote access is now secure, monitored, and controlled, significantly reducing the attack surface.
 
@@ -69,9 +69,9 @@ The new infrastructure was redesigned with security-by-design and defense-in-dep
 
 - Ensure business continuity and resilience
 
-## Security Improvements, Tools & Best Practices
+## **Security Improvements, Tools & Best Practices**
 
-- Network & Firewall Security
+### Network & Firewall Security
 
 - Tools: pfSense / UFW / Windows Firewall
 
@@ -85,74 +85,68 @@ The new infrastructure was redesigned with security-by-design and defense-in-dep
 
 - Logging and alerting enabled
 
-- Secure Remote Access
+### Secure Remote Access
 
-### Tools: 
-
-- OpenVPN / WireGuard
+- Tools: WireGuard
 
 - Encrypted VPN tunnels for all remote staff
 
-No direct access to internal servers from the internet
+- No direct access to internal servers from the internet
 
-Access restricted based on user roles
+- Access restricted based on user roles
 
-IDS / IPS (Intrusion Detection & Prevention)
+### IDS / IPS (Intrusion Detection & Prevention)
 
-Tools: Snort
+- Tools: Snort
 
-Monitors network traffic in real time
+- Monitors network traffic in real time
 
-Detects brute-force, malware, SQL injection, XSS
+- Detects brute-force, malware, SQL injection, XSS
 
-Automatically blocks malicious traffic
+- Automatically blocks malicious traffic
 
-Centralised alert logging and monitoring
+- Centralised alert logging and monitoring
 
-Web Server Hardening
+### Web Server Hardening
 
-Tools: Apache hardening, Wordfence, Fail2Ban
+- Tools: Apache hardening, Wordfence, Fail2Ban
 
-Removed server version banners
+- Removed server version banners
 
-Disabled directory listing
+- Disabled directory listing
 
-Protected against OWASP Top 10 attacks
+- Protected against OWASP Top 10 attacks
 
-Rate-limiting and brute-force protection
+- Rate-limiting and brute-force protection
 
-Malware & Ransomware Protection
+### Malware & Ransomware Protection
 
-Tools: ClamAV, Malwarebytes
+- Tools: ClamAV, Malwarebytes
 
-Real-time malware scanning
+- Real-time malware scanning
 
-Scheduled virus definition updates
+- Scheduled virus definition updates
 
-Regular system scans and alerts
+- Regular system scans and alerts
 
-Multi-Factor Authentication (MFA)
+### Multi-Factor Authentication (MFA)
 
-Tools: Duo Security
+- Tools: Duo Security
 
-MFA enforced for:
+- #### MFA enforced for:
 
-Windows Server login
+        - Windows Server login
 
-VPN access
+        - VPN access
 
-Administrative accounts
+        - Administrative accounts
 
-Protects against stolen credentials
+- Protects against stolen credentials
 
-Role-Based Access Control (RBAC)
+### Role-Based Access Control (RBAC)
 
-Tools: Active Directory
-
-Users assigned roles based on job function
-
-Least privilege principle enforced
-
-Admin access restricted and monitored
-
-Disabled unused and inactive accounts
+- Tools: Active Directory
+- Users assigned roles based on job function
+- Least privilege principle enforced
+- Admin access restricted and monitored
+- Disabled unused and inactive accounts
