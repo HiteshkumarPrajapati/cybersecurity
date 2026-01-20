@@ -1,0 +1,5 @@
+# OzCazual Cybersecurity Infrastructure Modernisation
+
+OzCazual is a growing online clothing retailer that experienced increased cyber risk due to insecure legacy infrastructure, remote workforce expansion, and outdated security 
+controls. This project redesigns OzCazual’s IT environment using **security-by-design, defense-in-depth**, and industry best practices, aligned with **NIST Cybersecurity Framework, 
+NIST SP 800-53, and OWASP Top 10.**
