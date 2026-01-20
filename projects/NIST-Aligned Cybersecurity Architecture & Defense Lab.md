@@ -7,9 +7,9 @@ aligned with **NIST Cybersecurity Framework, NIST SP 800-53, and OWASP Top 10.**
 
 > ## Risks in the Old Infrastructure
 
-> The original OzCloths environment had several critical security flaws that exposed the organisation to cyber attacks:
+    The original OzCloths environment had several critical security flaws that exposed the organisation to cyber attacks:
 
-> ### Major Security Breaches & Risks
+### Major Security Breaches & Risks
 
 - SMB file sharing (Port 445) exposed directly to the internet
 
@@ -19,76 +19,79 @@ aligned with **NIST Cybersecurity Framework, NIST SP 800-53, and OWASP Top 10.**
 
 - Weak password and access controls
 
-No IDS/IPS to detect or block attacks
+- No IDS/IPS to detect or block attacks
 
-No firewall rules for threat filtering or DoS protection
+- No firewall rules for threat filtering or DoS protection
 
-No malware or ransomware protection on servers
+- No malware or ransomware protection on servers
 
-Outdated software versions (WordPress, PHP, MySQL)
+- Outdated software versions (WordPress, PHP, MySQL)
 
-No monitoring or alerting system
+- No monitoring or alerting system
 
-Flat network with no segmentation
+- Flat network with no segmentation
 
-No incident response or recovery plan
+- No incident response or recovery plan
 
-These weaknesses made OzCloths vulnerable to:
+## These weaknesses made OzCloths vulnerable to:
 
-Brute-force attacks
+- Brute-force attacks
 
-Ransomware infections
+- Ransomware infections
 
-Data breaches
+- Data breaches
 
-Credential theft
+- Credential theft
 
-SQL Injection and XSS attacks
+- SQL Injection and XSS attacks
 
-Distributed Denial of Service (DDoS)
+- Distributed Denial of Service (DDoS)
 
-Insider threats
+- Insider threats
 
-Supply chain compromise
+- Supply chain compromise
 
-🛠️ New Secure Infrastructure – Solution Overview
+> ## New Secure Infrastructure – Solution Overview
 
 The new infrastructure was redesigned with security-by-design and defense-in-depth principles. All remote access is now secure, monitored, and controlled, significantly reducing the attack surface.
 
-Key Security Objectives
+## Key Security Objectives
 
-Secure remote access for employees
+- Secure remote access for employees
 
-Protect customer and business data
+- Protect customer and business data
 
-Detect and block cyber attacks in real time
+- Detect and block cyber attacks in real time
 
-Align with NIST CSF and OWASP Top 10
+- Align with NIST CSF and OWASP Top 10
 
-Improve incident response and recovery
+- Improve incident response and recovery
 
-Ensure business continuity and resilience
+- Ensure business continuity and resilience
 
-🔒 Security Improvements, Tools & Best Practices
-Network & Firewall Security
+## Security Improvements, Tools & Best Practices
 
-Tools: pfSense / UFW / Windows Firewall
+- Network & Firewall Security
 
-Removed all direct internet exposure (Port 445 closed)
+- Tools: pfSense / UFW / Windows Firewall
 
-Strict inbound and outbound firewall rules
+- Removed all direct internet exposure (Port 445 closed)
 
-DoS and brute-force traffic filtering
+- Strict inbound and outbound firewall rules
 
-Network segmentation for servers and users
+- DoS and brute-force traffic filtering
 
-Logging and alerting enabled
+- Network segmentation for servers and users
 
-Secure Remote Access
+- Logging and alerting enabled
 
-Tools: OpenVPN / WireGuard
+- Secure Remote Access
 
-Encrypted VPN tunnels for all remote staff
+### Tools: 
+
+- OpenVPN / WireGuard
+
+- Encrypted VPN tunnels for all remote staff
 
 No direct access to internal servers from the internet
 
