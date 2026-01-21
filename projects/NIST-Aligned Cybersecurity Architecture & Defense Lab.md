@@ -6,7 +6,8 @@ This project redesigns OzCloths’s IT environment using **security-by-design, d
 aligned with **NIST Cybersecurity Framework, NIST SP 800-53, and OWASP Top 10.**
 
 > ## Risks in the Old Infrastructure
-    The original OzCloths environment had several critical security flaws that exposed the organisation to cyber attacks:
+    The original OzCloths environment had several critical security flaws that 
+    exposed the organisation to cyber attacks:
 
 ### Major Security Breaches & Risks
 - SMB file sharing (Port 445) exposed directly to the internet
@@ -31,7 +32,7 @@ aligned with **NIST Cybersecurity Framework, NIST SP 800-53, and OWASP Top 10.**
 - Insider threats
 - Supply chain compromise
 
-## **New Secure Infrastructure – Solution Overview**
+> ## **New Secure Infrastructure – Solution Overview**
 The new infrastructure was redesigned with security-by-design and defense-in-depth principles. All remote access is now secure, monitored, and controlled, significantly reducing the attack surface.
 
 ## Key Security Objectives
@@ -85,9 +86,9 @@ The new infrastructure was redesigned with security-by-design and defense-in-dep
 - Tools: Duo Security
 
 - #### MFA enforced for:
-        - Windows Server login
-        - VPN access
-        - Administrative accounts
+  - Windows Server login
+  - VPN access
+  - Administrative accounts
 - Protects against stolen credentials
 
 ### Role-Based Access Control (RBAC)
