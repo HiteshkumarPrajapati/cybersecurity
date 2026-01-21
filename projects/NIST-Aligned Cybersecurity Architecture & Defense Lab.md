@@ -98,3 +98,187 @@ The new infrastructure was redesigned with security-by-design and defense-in-dep
 - Least privilege principle enforced
 - Admin access restricted and monitored
 - Disabled unused and inactive accounts
+
+> ## Practical approach - System Hardening and Imrove Security 
+
+## Windows Server System Hardening (Active Directory)
+### Objectives
+- Protect user identities
+- Prevent unauthorized access
+- Secure authentication and access control
+#### Hardening Steps
+- Upgrade OS
+    - Upgrade Windows Server 2012 → Windows Server 2022
+- Patch Management
+    - Enable automatic Windows Updates
+- Account Policies
+    - Password length ≥ 14 characters
+    - Account lockout after 5 failed attempts
+- Disable Legacy Protocols
+    - Disable SMBv1
+    - Disable NTLM where possible
+- Secure RDP
+    - Remove RDP port forwarding
+    - Allow RDP only via VPN
+- Audit & Logging
+    - Logon auditing
+    - Account changes
+    - Privilege escalation
+- Antivirus
+    - Enable Microsoft Defender
+    - Install Malwarebytes (real-time protection)
+
+### Result: Secure authentication, reduced attack surface, and strong monitoring
+
+## Linux Web Server Hardening (Ubuntu)
+
+### Objectives
+* Protect e-commerce website.
+* Prevent **OWASP Top 10** attacks.
+
+### Hardening Steps
+* **OS Hardening**
+    * Upgrade to Ubuntu 22.04 LTS.
+    * Disable root SSH login.
+* **Firewall (UFW)**
+    * Allow 22 (SSH – VPN only).
+    * Allow 80, 443 (Web).
+* **Fail2Ban**
+    * Protect: SSH, Apache, and WordPress login.
+* **Apache Security**
+    * Disable directory listing.
+    * Hide server tokens.
+* **PHP Hardening**
+    * Disable `expose_php`.
+    * Secure sessions.
+* **WordPress Security**
+    * Wordfence WAF.
+    * Disable XML-RPC.
+* **SSL/TLS**
+    * HTTPS enforced.
+
+
+### Result: Hardened web server protected from brute force, SQLi, and XSS.
+
+---
+
+## NAS Security Hardening (Synology)
+
+### Objectives
+* Protect sensitive business and customer data.
+
+### Hardening Steps
+* **Remove Port Forwarding:** Close SMB port 445 completely.
+* **VPN-Only Access:** NAS accessible only via VPN.
+* **Enable MFA:** Required for Admin and user accounts.
+* **Access Control:** Implement least privilege permissions.
+* **Encryption:** Encrypt sensitive shared folders.
+* **Logging:** Enable access logs and alerts.
+
+### Result: NAS protected from ransomware and external attacks.
+
+---
+
+## Virus & Malware Protection
+
+| Platform | Tools & Actions |
+| :--- | :--- |
+| **Linux** | ClamAV (scheduled scans), Wordfence malware detection |
+| **Windows** | Microsoft Defender, Malwarebytes Endpoint Protection |
+| **Testing** | EICAR malware test file |
+
+### Result: Early detection and prevention of malware.
+
+---
+
+## Firewall Configuration (pfSense / Azure Firewall)
+
+### Firewall Placement
+The firewall is positioned strategically between the **Internet** and the **Internal Network**.
+
+### Step-by-Step Rules
+| Rule | Action | Traffic Flow |
+| :--- | :--- | :--- |
+| **Allow HTTPS** | Allow |  Web Server |
+| **Allow VPN** | Allow |  VPN Gateway |
+| **Block SMB** | Block |  Internal |
+| **Block RDP** | Block |  Internal |
+| **DoS Protection** | Enable | Global |
+
+### Advanced Protection
+* Rate limiting.
+* SYN flood protection.
+* Geo-blocking (optional).
+
+### Result: Strong perimeter defense.
+
+---
+
+## Secure Remote Access (VPN)
+
+* **Tool:** OpenVPN or WireGuard.
+* **Installation & Configuration:**
+    * Install VPN on firewall.
+    * Integrate with Active Directory.
+    * Enforce MFA.
+    * Assign access based on role.
+* **Usage:**
+    - Employees connect to VPN.
+    - Access NAS, AD, and internal services.
+
+### Result: Encrypted and authenticated remote access.
+
+---
+
+## IDS / IPS Implementation (Snort)
+
+* **Installation:** Installed on firewall or Ubuntu server.
+* **Configuration:**
+    * Monitor internal and external interfaces.
+    * Enable **Emerging Threats** rules.
+    * Enable **IPS mode** (block attacks).
+* **Logging & Alerts:**
+    * Brute force attacks.
+    * Port scans.
+    * SQL injection.
+    * Malware traffic.
+
+### Result: Real-time attack detection and prevention.
+
+---
+
+## Multi-Factor Authentication (MFA)
+
+* **Tools:** Duo Security.
+* **Enabled On:**
+    * Windows login.
+    * VPN access.
+    * NAS admin access.
+* **Authentication Methods:**
+    * Push notification.
+    * OTP (One-Time Password).
+
+### Result: Credentials alone cannot compromise systems.
+
+---
+
+## Role-Based Access Control (RBAC)
+
+### Roles Defined
+| Role | Access Level |
+| :--- | :--- |
+| **Admin** | Full access |
+| **IT Support** | Servers & logs |
+| **Marketing** | Website CMS |
+| **Sales** | Limited NAS access |
+
+### Implementation
+* Active Directory groups.
+* NAS permission mapping.
+* VPN access rules.
+
+### Result: Users access only what they need.
+
+
+
+
