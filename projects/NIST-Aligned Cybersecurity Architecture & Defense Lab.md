@@ -192,6 +192,73 @@ The new infrastructure was redesigned with security-by-design and defense-in-dep
 ---
 
 ## Firewall Configuration (pfSense / Azure Firewall)
+This guide is formatted to be a clean, technical README or instruction set for a GitHub repository.
+
+### pfSense Firewall – Installation, Configuration & Testing
+
+This document provides a comprehensive guide for setting up and hardening a pfSense firewall within a virtualized or physical environment.
+
+### Step 1: Install pfSense
+
+### 1. Prerequisites
+* **Download:** Obtain the latest pfSense ISO from [Netgate](https://www.pfsense.org/download/).
+* **Resources:** * 2 GB RAM
+    * 2 CPUs
+    * 20 GB Disk Space
+
+### 2. Network Configuration
+Configure the Virtual Machine (VirtualBox / VMware) with **two** Network Interface Cards (NICs):
+
+| Interface | Type | Purpose |
+| :--- | :--- | :--- |
+| **Adapter 1 (WAN)** | NAT / Bridged | External Internet Connection |
+| **Adapter 2 (LAN)** | Internal Network | Private Network Segment |
+
+### 3. Installation Flow
+1. Boot from the ISO.
+2. Follow the setup wizard using **Default Options**.
+3. **Assign Interfaces:**
+    * Assign the Internet-facing NIC to **WAN**.
+    * Assign the internal network NIC to **LAN**.
+
+### Step 2: Basic Firewall Hardening
+
+To ensure the management interface is secure, perform the following immediately after installation:
+
+- **Change Admin Password:** Replace the default `pfsense` credentials.
+- **Disable WebGUI on WAN:** Ensure the management interface is not accessible from the public internet.
+- **Enable HTTPS WebGUI:** Force encrypted connections for the dashboard.
+- **Enable Automatic Updates:** Maintain the latest security patches.
+
+### Step 3: Firewall Rule Configuration (Core Rules)
+
+#### WAN Rules (Default Deny)
+*Primary Goal: Block all unsolicited inbound traffic.*
+
+* **Block:** ALL inbound traffic by default.
+* **Allow:** * **WireGuard VPN:** Port `UDP 51820`.
+    * **ICMP:** Optional (rate-limited) for diagnostic pings.
+
+#### LAN Rules
+*Primary Goal: Restrict internal traffic to necessary services.*
+
+* **Allow:**
+    * LAN → VPN subnet.
+    * LAN → Web Server (Ports `80`, `443`).
+    * LAN → DNS (Port `53`), NTP (Port `123`).
+* **Deny:**
+    * SMB (`445`), RDP (`3389`), SSH (`22`) outbound to the general internet.
+
+#### Anti-DDoS & Brute Force
+
+Implement **Firewall Limiters** to mitigate volumetric attacks and resource exhaustion:
+
+1. **Navigation:** Go to `Firewall` → `Traffic Shaper` → `Limiters`.
+2. **Rate Limiting:**
+    * Set **Max 50 connections** per source IP.
+    * **Action:** Automatically block the source if the threshold is exceeded.
+
+> Always test your rules after application to ensure legitimate traffic (like DNS lookups) is not inadvertently blocked.
 
 ### Firewall Placement
 The firewall is positioned strategically between the **Internet** and the **Internal Network**.
@@ -212,11 +279,13 @@ The firewall is positioned strategically between the **Internet** and the **Inte
 
 ### Result: Strong perimeter defense.
 
----
-
 ## Secure Remote Access (VPN)
 
-* **Tool:** OpenVPN or WireGuard.
+* **Tool:** WireGuard.
+### WireGuard VPN – Secure Remote Access
+
+This guide covers the installation and configuration of WireGuard on a pfSense firewall to provide encrypted, high-performance remote access to the internal network.
+
 * **Installation & Configuration:**
     * Install VPN on firewall.
     * Integrate with Active Directory.
@@ -226,9 +295,53 @@ The firewall is positioned strategically between the **Internet** and the **Inte
     - Employees connect to VPN.
     - Access NAS, AD, and internal services.
 
-### Result: Encrypted and authenticated remote access.
+### Step 1: Install WireGuard
+
+WireGuard is available as a package for pfSense. 
+
+1. Navigate to **System** → **Package Manager** → **Available Packages**.
+2. Search for `WireGuard`.
+3. Click **Install** and confirm.
 
 ---
+
+### Step 2: VPN Configuration
+
+### 1. Create Tunnel
+* **Interface:** `wg0`
+* **Description:** Remote Access VPN
+* **Listen Port:** `51820` (Default)
+
+### 2. Security & Networking
+* **Generate Keys:** Create the Server Private and Public keys within the tunnel settings.
+* **Assign VPN Subnet:** * Tunnel Address: `10.10.10.1/24`
+    * This subnet will be used for all connected VPN clients.
+
+### Step 3: Client Configuration
+
+Each client requires a unique configuration file. Below is a standard template for a remote employee:
+
+ini
+[Interface]
+PrivateKey = <CLIENT_PRIVATE_KEY>
+Address = 10.10.10.10/32
+DNS = 10.0.0.1
+
+[Peer]
+PublicKey = <SERVER_PUBLIC_KEY>
+Endpoint = <YOUR_PUBLIC_IP>:51820
+AllowedIPs = 10.0.0.0/16
+PersistentKeepalive = 25
+[!NOTE] Ensure the Endpoint uses your firewall's public-facing static IP or Dynamic DNS hostname.
+
+### Step 4: VPN Testing
+Once the tunnel is active, perform the following validation steps to ensure the "Zero Trust" model is working:
+
+- Connectivity: Ping internal server IPs (e.g., 10.0.0.5) from the client device.
+- Resource Access: Attempt to mount an internal file share or access a private web dashboard.
+- Security Verification: Disconnect the VPN and verify that all internal resources are completely inaccessible.
+
+### Result: Encrypted and authenticated remote access is established.
 
 ## IDS / IPS Implementation (Snort)
 
@@ -259,8 +372,6 @@ The firewall is positioned strategically between the **Internet** and the **Inte
     * OTP (One-Time Password).
 
 ### Result: Credentials alone cannot compromise systems.
-
----
 
 ## Role-Based Access Control (RBAC)
 
