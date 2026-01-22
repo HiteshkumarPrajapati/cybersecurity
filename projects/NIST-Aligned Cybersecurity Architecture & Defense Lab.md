@@ -345,7 +345,6 @@ Once the tunnel is active, perform the following validation steps to ensure the 
 
 ## IDS / IPS Implementation (Snort)
 
-* **Installation:** Installed on firewall or Ubuntu server.
 * **Configuration:**
     * Monitor internal and external interfaces.
     * Enable **Emerging Threats** rules.
@@ -355,10 +354,64 @@ Once the tunnel is active, perform the following validation steps to ensure the 
     * Port scans.
     * SQL injection.
     * Malware traffic.
+      
+* **Installation:** Installed on firewall or Ubuntu server.
+  
+### Step 1: Install Snort
+
+Snort is managed as a package within the pfSense environment.
+
+1. Navigate to **System** → **Package Manager** → **Available Packages**.
+2. Search for `Snort`.
+3. Click **Install** and confirm.
+
+###  Step 2: Enable Snort on Interfaces
+
+To effectively protect the network, Snort must be active on both entry and exit points.
+
+* **Interfaces to Enable:**
+    * **WAN:** Monitors external threats and scans.
+    * **LAN:** Monitors internal lateral movement.
+* **Operational Mode:**
+    * **IPS (Inline Blocking):** Set to active drop mode.
+    * **Enable Auto-Block:** Automatically add offending IPs to the firewall's block list.
+
+###  Step 3: Snort Rule Configuration
+
+Custom rules are implemented to target specific attack vectors including Brute Force and OWASP Top 10 vulnerabilities.
+
+###  Brute Force Rule
+Detects multiple failed SSH attempts within a short timeframe.
+
+alert tcp any any -> $HOME_NET 22 \
+(msg:"SSH Brute Force Attempt"; \
+flow:to_server,established; \
+content:"SSH"; \
+threshold:type both, track by_src, count 5, seconds 60; \
+sid:1000001; rev:1;)
+
+###  SQL Injection Rule
+alert tcp any any -> $HOME_NET 80 \
+(msg:"SQL Injection Attempt"; \
+content:"' OR 1=1"; nocase; \
+sid:1000002; rev:1;)
+
+###  XSS Rule
+alert tcp any any -> $HOME_NET 80 \
+(msg:"XSS Attempt"; \
+content:"<script>"; nocase; \
+sid:1000003; rev:1;)
+
+###   Step 4: Monitoring Alerts
+
+Dashboard → Snort Alerts
+
+Logs stored in /var/log/snort
+
+Alerts auto-block IPs
 
 ### Result: Real-time attack detection and prevention.
 
----
 
 ## Multi-Factor Authentication (MFA)
 
@@ -370,6 +423,26 @@ Once the tunnel is active, perform the following validation steps to ensure the 
 * **Authentication Methods:**
     * Push notification.
     * OTP (One-Time Password).
+      
+### Step 1: Create Duo Account 
+
+### Create application: 
+- VPN
+- Windows Login
+    
+### Note: - Integration Key - Secret Key - API Hostname 
+
+### Step 2: MFA for Windows Server 
+- Install Duo for Windows Logon
+- Enter API credentials
+  ### Enable for:
+    - Domain Admins
+    - VPN Users
+    - Test login → Push notification
+
+### Step 3: MFA for VPN 
+- Enable MFA on WireGuard users
+- Require MFA approval before connection
 
 ### Result: Credentials alone cannot compromise systems.
 
@@ -391,5 +464,54 @@ Once the tunnel is active, perform the following validation steps to ensure the 
 ### Result: Users access only what they need.
 
 
+## Cybersecurity Framework Mapping
 
+| NIST Function | Implementation |
+| :--- | :--- |
+| Identify | "Asset inventory, risk assessment" |
+| Protect | "Firewall, VPN, MFA, RBAC" |
+| Detect | "Snort IDS, logs, alerts" |
+| Respond | "Fail2Ban, IP blocking" |
+| Recover | "Backups, restore plans" |
 
+| NIST Category | Example |
+| :--- | :--- |
+| ID.AM | "Asset management (servers, NAS)" |
+| PR.AC | "Access control (RBAC, MFA)" |
+| PR.PT | "Protective tech (Firewall, IDS)" |
+| DE.CM | Continuous monitoring (Snort) |
+| RS.MI | Incident mitigation |
+| RC.RP | Recovery planning |
+
+### Mapping to OWASP Top 10
+
+| OWASP Top 10 Risk | Defence Implemented |
+| :--- | :--- |
+| A01: Broken Access Control | "RBAC, AD groups" |
+| A02: Cryptographic Failures | "VPN, HTTPS" |
+| A03: Injection | "Snort rules, WAF" |
+| A05: Security Misconfig | Firewall hardening |
+| A07: Identification Failures | MFA |
+| A08: Software Integrity | Patch management |
+| A09: Logging & Monitoring | Snort + logs |
+| A10: SSRF | Firewall filtering |
+
+## Red Team vs Blue Team – Attack & Defense
+
+### Red Team Attacks
+| Attack | Tool |
+| :--- | :--- |
+| Brute Force | Hydra |
+| SQL Injection | SQLmap |
+| XSS | Burp Suite |
+| DDoS | hping3 |
+| Port Scan | Nmap |
+
+### Blue Team Defense
+| Defense | Tool |
+| :--- | :--- |
+| Detect | Snort |
+| Block | pfSense |
+| Authenticate | MFA |
+| Isolate | Firewall rules |
+| Recover | Backup restore |
