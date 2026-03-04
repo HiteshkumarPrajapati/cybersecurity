@@ -313,3 +313,248 @@ Major Phases:
 - Prioritize high-risk areas (cloud access, phishing).
 - Track measurable milestones.
 - Maintain audit-ready documentation.
+
+## Phase 2 Report – Context & Scope Definition
+
+# 1. Organizational Context (Clause 4.1)
+
+### Purpose
+
+To understand internal and external factors that affect Qlyntix’s ability to achieve information security objectives.
+
+---
+
+### Internal Context (Qlyntix-Specific)
+
+### Business Nature
+
+- SaaS product development company delivering cloud-based CRM platform.
+- Processes high-value sensitive data (customer CRM data, financial records, HR records, source code).
+
+### Current Security Challenges
+
+- Phishing attacks targeting employees.
+- Suspicious cloud login activities.
+- Gaps identified in client security assessments.
+- Weak vendor security due diligence.
+- No formal risk assessment process.
+
+### Organizational Structure
+
+- **Departments:** HR, Finance, Development, DevOps, IT, Marketing, Sales, Procurement.
+- Cloud-based infrastructure (likely AWS/Azure/GCP).
+- Remote and hybrid workforce environment.
+
+### Technology Environment
+
+- Cloud-hosted production systems.
+- CI/CD pipelines.
+- Version control systems (Git-based).
+- CRM databases.
+- Identity management systems.
+
+---
+
+### External Context
+
+### Cyber Threat Landscape
+
+- Increasing SaaS-targeted phishing campaigns.
+- Credential stuffing attacks.
+- Cloud misconfiguration risks.
+- Supply chain/vendor attacks.
+
+### Regulatory & Contractual Requirements
+
+- Data protection regulations (GDPR-like requirements depending on geography).
+- Enterprise customer contractual security clauses.
+- Audit and compliance requirements.
+
+### Market Pressure
+
+- Enterprise clients demanding ISO 27001 certification.
+- Competitive disadvantage without formal certification.
+- Reputation-sensitive SaaS market.
+
+### Tools & Best Practices for Context Analysis
+
+- **SWOT Analysis** (Security-focused)
+- **PESTLE Analysis** (Political, Economic, Social, Technological, Legal, Environmental)
+- Risk heat maps
+- Industry threat intelligence reports
+- Cloud Security Posture Management (CSPM) tools for visibility
+- Workshops with department heads
+
+---
+
+### Interested Parties (Clause 4.2)
+
+### Purpose
+
+Identify stakeholders who influence or are affected by Qlyntix’s ISMS.
+
+---
+
+### Key Interested Parties & Their Requirements
+
+### Customers (Enterprise & SME Clients)
+- Protection of CRM data.
+- Secure cloud infrastructure.
+- Incident notification processes.
+- ISO 27001 certification proof.
+
+### Employees
+- Secure systems access.
+- Clear security policies.
+- Phishing awareness training.
+
+### Top Management
+- Reduced business risk.
+- Regulatory compliance.
+- Market competitiveness.
+
+### Vendors / Cloud Providers
+- Clear security responsibilities.
+- Secure integration standards.
+
+### 5. Regulators
+- Compliance with data protection laws.
+- Evidence of security governance.
+
+### 6. Certification Body
+- Compliance with ISO 27001 requirements.
+- Documented ISMS evidence.
+
+---
+
+### Best Practices
+
+- Maintain Interested Parties Register.
+- Map stakeholder requirements to ISMS controls.
+- Review annually or when major business changes occur.
+- Align customer security clauses with SoA (Statement of Applicability).
+
+---
+
+### Tools
+
+- Stakeholder Analysis Matrix (Excel or GRC tool)
+- Contract management software
+- Vendor risk management platforms
+- CRM data classification tools
+
+---
+
+### ISMS Scope (Clause 4.3)
+
+### Purpose
+
+Define the boundaries and applicability of the ISMS.
+
+---
+
+### Scope Definition for Qlyntix (Tailored)
+
+### Organizational Scope
+
+Include:
+
+- HR (employee lifecycle security)
+- Finance (financial data protection)
+- IT (identity and access management)
+- Development (secure coding practices)
+- DevOps (CI/CD security)
+- Cloud Operations (infrastructure security)
+- Marketing & Sales (customer data handling)
+- Procurement (vendor risk management)
+
+### Technical Scope
+
+- CRM SaaS application (production & staging)
+- Cloud hosting environments
+- Internal corporate IT systems
+- Endpoints and remote access systems
+
+### Physical Scope
+
+- Corporate office locations (if applicable)
+- Remote workforce endpoints
+
+### Exclusions (If Any)
+
+- Legacy systems not handling sensitive data (must justify)
+- Customer-managed environments
+
+### Important Considerations
+
+- Scope must be realistic and manageable.
+- Cannot exclude high-risk processes.
+- Must align with business model.
+- Auditors will verify scope consistency.
+
+---
+
+### Best Tools & Practices
+
+- Asset inventory tools (CMDB systems)
+- Cloud asset discovery tools (AWS Config, Azure Defender)
+- Data classification tools
+- Network mapping tools
+---
+
+
+### ISMS Policy (Clause 5.2)
+
+### Purpose
+
+Establish top management’s formal commitment to information security.
+
+---
+
+### Commitment to Protect Information
+
+- Protect confidentiality of CRM customer data.
+- Ensure integrity of financial and HR records.
+- Maintain availability of SaaS platform.
+
+### Risk-Based Approach
+
+- Conduct structured risk assessments.
+- Apply risk treatment plans.
+- Review risks annually.
+
+### Compliance Commitment
+
+- Comply with legal, regulatory, and contractual obligations.
+- Align with ISO 27001:2022 requirements.
+
+### Continuous Improvement
+
+- Monitor ISMS performance.
+- Conduct internal audits.
+- Implement corrective actions.
+
+### Defined Roles & Responsibilities
+
+- ISMS Manager authority.
+- Department head responsibilities.
+- Employee security obligations.
+
+---
+
+### Best Practices
+
+- CEO signs and approves policy.
+- Communicate to all employees.
+- Publish internally (intranet/SharePoint).
+- Review annually or upon major changes.
+- Keep policy concise but meaningful.
+
+---
+
+### Technologies
+
+- Document control systems (SharePoint, Confluence)
+- Version control and approval workflow tools
+- Policy acknowledgment tracking software
+- Learning Management System (LMS) for awareness training
