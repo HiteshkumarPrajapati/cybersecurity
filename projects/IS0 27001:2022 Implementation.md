@@ -179,7 +179,7 @@ Ensure leadership understands current risks and ISO responsibilities.
 
 ---
 
-### 4. Secure Management Commitment
+### Secure Management Commitment
 
 ### Purpose
 
@@ -240,7 +240,7 @@ Examples:
 
 ---
 
-### 5. Project Planning
+### Project Planning
 
 ### Purpose
 
@@ -324,7 +324,7 @@ To understand internal and external factors that affect Qlyntix’s ability to a
 
 ---
 
-### Internal Context (Qlyntix-Specific)
+### Internal Context 
 
 ### Business Nature
 
@@ -342,7 +342,7 @@ To understand internal and external factors that affect Qlyntix’s ability to a
 ### Organizational Structure
 
 - **Departments:** HR, Finance, Development, DevOps, IT, Marketing, Sales, Procurement.
-- Cloud-based infrastructure (likely AWS/Azure/GCP).
+- Cloud-based infrastructure (Azure).
 - Remote and hybrid workforce environment.
 
 ### Technology Environment
@@ -558,3 +558,321 @@ Establish top management’s formal commitment to information security.
 - Version control and approval workflow tools
 - Policy acknowledgment tracking software
 - Learning Management System (LMS) for awareness training
+
+### Phase 3 Report – Risk Management Framework
+
+### Risk Methodology
+
+### Purpose
+
+Define a consistent and repeatable method for identifying and managing risks affecting Qlyntix’s SaaS CRM platform and supporting systems.
+
+---
+
+### Key Components
+
+### Risk Identification Criteria
+
+- Identify threats (phishing, insider misuse, cloud misconfiguration, vendor breach).
+- Identify vulnerabilities (weak passwords, lack of MFA, unpatched systems).
+- Identify affected assets (CRM database, cloud infrastructure, HR records, source code).
+
+### Risk Analysis Model
+
+- **Likelihood scale** (e.g., 1–5)
+- **Impact scale** (e.g., 1–5)
+- **Risk Score = Likelihood × Impact**
+- Categorize risks as **Low**, **Medium**, **High**, **Critical**.
+
+### Risk Criteria Definition
+
+- Define acceptable risk threshold.
+- Define escalation criteria for high-risk issues.
+- Align risk tolerance with business objectives.
+
+---
+
+### Tools & Technologies
+
+- Risk Register (Excel or GRC tool such as ServiceNow GRC)
+- Threat intelligence feeds
+- Vulnerability scanning tools (Nessus, Qualys)
+- Cloud Security Posture Management (CSPM)
+- Risk heat map visualization tools (Power BI)
+
+---
+
+### Best Practices
+
+- Use standardized scoring to avoid subjective decisions.
+- Align methodology with ISO requirements.
+- Review methodology annually.
+- Ensure management approval of risk criteria.
+
+---
+
+### Asset Inventory
+
+### Purpose
+
+Identify and classify all assets within ISMS scope to ensure complete risk coverage.
+
+---
+
+### Asset Categories for Qlyntix
+
+### Information Assets
+
+- Customer CRM data
+- Financial records
+- Employee data
+- Marketing databases
+- Source code repositories
+
+### Technical Assets
+
+- Cloud servers and storage
+- Databases
+- CI/CD pipelines
+- Firewalls and network devices
+- Endpoints (laptops, workstations)
+
+### Supporting Assets
+
+- Third-party SaaS tools
+- Cloud service providers
+- Vendor integrations
+
+### Asset Classification
+
+- **Public**
+- **Internal**
+- **Confidential**
+- **Restricted**
+
+**Note:** Customer CRM data and financial records should be classified as **Restricted** or **Confidential**.
+
+---
+
+### Tools & Technologies
+
+- CMDB (Configuration Management Database)
+- Cloud asset discovery tools (AWS Config / Azure Defender)
+- Endpoint management systems (Intune, Jamf)
+- Data classification tools (Microsoft Purview)
+
+---
+
+### Best Practices
+
+- Assign asset owner for each asset.
+- Link assets to business processes.
+- Update inventory regularly.
+- Include vendor-managed assets.
+
+---
+
+### Risk Assessment
+
+### Purpose
+
+Identify threats and vulnerabilities impacting each asset.
+
+---
+
+### Risk Assessment Process
+
+### Identify Threats
+
+- Phishing targeting employees.
+- Credential stuffing attacks.
+- Cloud configuration errors.
+- Vendor system compromise.
+- Insider misuse.
+
+### Identify Vulnerabilities
+
+- Weak password policies.
+- Lack of multi-factor authentication.
+- Inadequate vendor due diligence.
+- Insufficient monitoring and logging.
+
+### Determine Impact
+
+- Data breach consequences.
+- Financial losses.
+- Reputational damage.
+- Service downtime.
+
+### Determine Likelihood
+
+- Frequency of phishing attempts.
+- Exposure of internet-facing systems.
+- Vendor security maturity.
+
+---
+
+### Tools
+
+- Vulnerability scanners (Nessus, Qualys)
+- Penetration testing
+- Cloud security audits
+- Phishing simulation platforms
+- SIEM tools for log analysis (Splunk, Microsoft Sentinel)
+
+---
+
+### Best Practices
+
+- Conduct workshops with department heads.
+- Base risk decisions on evidence.
+- Include both technical and business risks.
+- Document all assumptions.
+
+---
+
+### Risk Evaluation
+
+### Purpose
+
+Compare assessed risks against defined risk acceptance criteria.
+
+---
+
+### Key Activities
+
+- Rank risks from highest to lowest.
+- Identify unacceptable risks.
+- Determine treatment priority.
+- Present high-risk items to management.
+
+---
+
+### Risk Categories Example
+
+- **Critical**: Immediate action required (e.g., no MFA on admin accounts).
+- **High**: Treatment plan within defined timeframe.
+- **Medium**: Monitor and treat if resources allow.
+- **Low**: Acceptable with monitoring.
+
+---
+
+### Tools
+
+- Risk heat map dashboards
+- Risk matrix charts
+- GRC software for tracking
+
+---
+
+### Best Practices
+
+- Ensure evaluation is management-approved.
+- Review high risks quarterly.
+- Maintain documented evidence for auditors.
+
+---
+
+### Risk Treatment
+
+### Purpose
+
+Select appropriate actions to address unacceptable risks.
+
+---
+
+### Risk Treatment Options (ISO-Compliant)
+
+- **Avoid risk**
+- **Mitigate risk**
+- **Transfer risk** (insurance, vendor agreement)
+- **Accept risk** (with approval)
+
+---
+
+### Example Treatments for Qlyntix
+
+### Phishing Risk
+
+- Implement mandatory MFA.
+- Conduct regular phishing awareness training.
+- Deploy email security gateway.
+
+### Cloud Access Risk
+
+- Enforce role-based access control (RBAC).
+- Implement centralized identity management.
+- Enable continuous cloud monitoring.
+
+### Vendor Risk
+
+- Conduct vendor security assessments.
+- Include security clauses in contracts.
+- Perform periodic vendor audits.
+
+---
+
+### Tools & Technologies
+
+- Identity and Access Management (Okta, Azure AD)
+- SIEM solutions
+- Endpoint Detection & Response (EDR)
+- Vendor risk management platforms
+- Backup and disaster recovery systems
+
+---
+
+### Best Practices
+
+- Link treatments to measurable objectives.
+- Document residual risk.
+- Obtain management approval.
+- Track implementation progress.
+
+---
+
+### Statement of Applicability (SoA)
+
+### Purpose
+
+Document selected security controls and justify inclusion or exclusion.
+
+---
+
+### Key Elements
+
+- List of all ISO Annex A controls.
+- Indicate whether each control is:
+  - Applicable
+  - Not Applicable (with justification)
+- Reference implemented policies or procedures.
+- Link to identified risks.
+
+---
+
+### For Qlyntix, Key Control Areas Likely Applicable
+
+- Access Control
+- Cryptography
+- Secure Development Lifecycle
+- Supplier Security Management
+- Incident Management
+- Logging and Monitoring
+- Backup and Business Continuity
+
+---
+
+### Tools
+
+- SoA Template (Excel)
+- GRC platform
+- Control mapping tools
+
+---
+
+### Best Practices
+
+- Ensure SoA reflects actual implementation.
+- Align SoA with risk assessment results.
+- Review annually or after significant changes.
+- Keep it audit-ready and updated.
