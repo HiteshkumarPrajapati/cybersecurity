@@ -316,7 +316,7 @@ Major Phases:
 
 ## Phase 2 Report – Context & Scope Definition
 
-# 1. Organizational Context (Clause 4.1)
+### Organizational Context (Clause 4.1)
 
 ### Purpose
 
@@ -417,11 +417,11 @@ Identify stakeholders who influence or are affected by Qlyntix’s ISMS.
 - Clear security responsibilities.
 - Secure integration standards.
 
-### 5. Regulators
+### Regulators
 - Compliance with data protection laws.
 - Evidence of security governance.
 
-### 6. Certification Body
+### Certification Body
 - Compliance with ISO 27001 requirements.
 - Documented ISMS evidence.
 
