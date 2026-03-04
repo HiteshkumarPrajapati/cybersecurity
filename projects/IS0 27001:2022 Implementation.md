@@ -61,13 +61,13 @@ Formally initiate ISO 27001 implementation in response to real cybersecurity inc
 
 ---
 
-## Best Practices
+### Best Practices
 
 - Use real internal security incidents as justification.
 - Align ISMS goals with business growth and enterprise customer acquisition.
 - Obtain documented executive approval.
 
-## 2. Define Project Governance – Qlyntix ISMS
+### 2. Define Project Governance – Qlyntix ISMS
 
 ### Purpose
 
@@ -82,7 +82,7 @@ Create structured oversight to prevent fragmented security practices across depa
 - **Project Sponsor:** CEO  
 - **ISMS Manager:** Senior Security Lead  
 
-### Steering Committee
+### ISMS Committee
 
 - CTO (Cloud & DevOps oversight)
 - Head of HR (Employee data security)
@@ -125,3 +125,191 @@ Create structured oversight to prevent fragmented security practices across depa
 - Clearly define accountability to avoid control gaps.
 - Ensure leadership actively participates in reviews.
 - Maintain documented meeting minutes.
+
+### 3. Conduct Management Awareness Session
+
+### Purpose
+
+Ensure leadership understands current risks and ISO responsibilities.
+
+---
+
+### Session Topics (Tailored to Qlyntix)
+
+### Current Risk Landscape
+
+- Phishing trends targeting SaaS companies.
+- Cloud misconfiguration risks.
+- Vendor supply chain attacks.
+- Regulatory risks affecting customer CRM data.
+
+---
+
+### ISO 27001 Leadership Responsibilities
+
+- Establish Information Security Policy.
+- Integrate ISMS into business processes.
+- Promote risk-based thinking.
+- Support continuous improvement.
+
+---
+
+### Business Impact Discussion
+
+- Client trust loss due to security gaps.
+- Risk of losing enterprise contracts.
+- Reputational damage from public breach.
+
+---
+
+### Tools & Methods
+
+- Executive presentation with internal incident examples.
+- Risk heat map.
+- Case studies of SaaS breaches.
+- Interactive Q&A session.
+
+---
+
+### Best Practices
+
+- Keep discussion strategic (not overly technical).
+- Link cybersecurity maturity to revenue growth.
+- Document management acknowledgment.
+
+---
+
+### 4. Secure Management Commitment
+
+### Purpose
+
+Translate awareness into formal commitment and action.
+
+---
+
+### Required Management Actions
+
+### Approve Information Security Policy
+
+Policy should include:
+
+- Commitment to protect CRM customer data.
+- Protection of financial and employee information.
+- Secure cloud infrastructure management.
+- Vendor risk management framework.
+- Compliance with ISO 27001 requirements.
+
+---
+
+### Allocate Resources
+
+Budget for:
+
+- Multi-Factor Authentication (MFA)
+- SIEM solution for log monitoring
+- Vulnerability management tools
+- Employee phishing awareness training
+- Dedicated ISMS team
+
+---
+
+### Define Measurable Security Objectives
+
+Examples:
+
+- 100% MFA for cloud admin accounts.
+- 90% reduction in phishing click rate within 6 months.
+- Vendor security review for 100% critical suppliers.
+- Formal risk assessment completed annually.
+
+---
+
+### Communicate Commitment Organization-Wide
+
+- CEO announcement email.
+- Security commitment published on intranet.
+- Include ISMS updates in company meetings.
+
+---
+
+### Best Practices
+
+- CEO signs Information Security Policy.
+- Include security KPIs in executive performance reviews.
+- Align security with strategic objectives.
+
+---
+
+### 5. Project Planning
+
+### Purpose
+
+Create structured roadmap to address identified weaknesses.
+
+---
+
+### Key Planning Activities
+
+### Define ISMS Scope (Specific to Qlyntix)
+
+Include:
+
+- CRM SaaS platform development and deployment.
+- Cloud infrastructure environments.
+- HR, Finance, Marketing, DevOps, IT, Sales.
+- Vendor and third-party integrations.
+
+---
+
+### Develop Work Breakdown Structure (WBS)
+
+Major Phases:
+
+1. Context & Scope Definition
+2. Risk Assessment & Treatment
+3. Control Implementation
+4. Internal Audit
+5. Certification Audit
+
+---
+
+### Identify Project Risks
+
+- Resistance to process changes.
+- Delays in documentation.
+- Resource constraints.
+- Technical integration challenges.
+
+---
+
+### Develop Communication Plan
+
+- Weekly ISMS team meeting.
+- Monthly steering committee meeting.
+- Quarterly leadership update.
+
+---
+
+### Establish Documentation Control
+
+- Central repository in Confluence.
+- Version control system.
+- Formal approval workflow.
+
+---
+
+### Recommended Tools
+
+- MS Project or Jira (task tracking)
+- Confluence (policy management)
+- SharePoint (controlled documentation)
+- Risk Register in Excel or GRC platform
+
+---
+
+### Best Practices
+
+- Adopt phased implementation.
+- Prioritize high-risk areas (cloud access, phishing).
+- Track measurable milestones.
+- Maintain audit-ready documentation.
