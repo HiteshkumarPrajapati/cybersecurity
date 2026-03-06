@@ -559,7 +559,7 @@ Establish top management’s formal commitment to information security.
 - Policy acknowledgment tracking software
 - Learning Management System (LMS) for awareness training
 
-### Phase 3 Report – Risk Management Framework
+## Phase 3 Report – Risk Management Framework
 
 ### Risk Methodology
 
@@ -914,3 +914,236 @@ Document selected security controls and justify inclusion or exclusion.
 - Align SoA with risk assessment results.
 - Review annually or after significant changes.
 - Keep it audit-ready and updated.
+
+## Phase 4: ISMS Implementation
+
+### Organizational Controls
+
+Organizational controls define governance structures, policies, and procedures to manage information security across departments.
+
+### Key Implementation Activities
+
+### Establish Information Security Governance
+- Create an ISMS Steering Committee consisting of:
+  - CTO
+  - CIO / IT Head
+  - HR Manager
+  - Finance Head
+  - Cloud Operations Manager
+- Define decision-making authority for security risks and policies.
+- Conduct quarterly ISMS governance meetings.
+
+### Develop Security Policies and Procedures
+Implement formal policies such as:
+- Information Security Policy
+- Access Control Policy
+- Risk Management Policy
+- Data Classification Policy
+- Supplier Security Policy
+- Incident Response Policy
+- Business Continuity Policy
+
+These policies must be:
+- Approved by top management
+- Communicated to all employees
+- Reviewed annually
+
+### Information Security Risk Management
+- Implement the risk treatment plan developed in Phase 3.
+- Track risks in a central risk register.
+- Conduct periodic risk reviews and reassessments.
+
+### Vendor & Supplier Security Management
+Since Qlyntix relies on third-party vendors and cloud providers:
+- Conduct vendor security assessments
+- Include security clauses in contracts
+- Perform periodic vendor audits
+
+#### Example requirements:
+- Data protection clauses
+- Breach notification obligations
+- Compliance with security standards
+
+### Incident Management Framework
+Develop a structured incident response process to manage events such as:
+- Phishing attacks
+- Unauthorized logins
+- Cloud infrastructure breaches
+
+#### Key activities:
+- Incident reporting mechanism
+- Incident classification
+- Root cause analysis
+- Post-incident review
+
+### Business Continuity & Disaster Recovery
+Ensure CRM platform availability through:
+- Disaster Recovery Plan
+- Data backup procedures
+- Recovery time objectives (RTO)
+- Recovery point objectives (RPO)
+
+### Tools & Technologies
+- Governance tools (ServiceNow GRC, Archer GRC)
+- Risk register management tools
+- Vendor risk management platforms
+- Documentation systems (Confluence, SharePoint)
+
+### Best Practices
+- Integrate security governance into business operations
+- Align policies with ISO requirements
+- Ensure management accountability
+- Maintain proper documentation for audits
+
+---
+
+### People Controls
+
+People controls ensure that employees understand their role in protecting organizational information and prevent human-related security risks. This is particularly important because phishing attacks and credential theft were identified as major risks in the project statement.
+
+### Key Implementation Activities
+
+### Security Awareness Training Program
+Develop mandatory security awareness programs covering:
+- Phishing identification
+- Password security
+- Data protection practices
+- Secure use of cloud systems
+- Incident reporting procedures
+
+Training must be:
+- Conducted during employee onboarding
+- Repeated annually
+- Measured through awareness assessments
+
+### Phishing Simulation Campaigns
+- Conduct simulated phishing campaigns to evaluate employee awareness.
+- Identify vulnerable users
+- Provide targeted training
+- Reduce phishing success rates
+
+### Employee Background Verification
+Conduct background checks for employees with access to sensitive data.
+
+Applicable to:
+- Developers
+- IT administrators
+- Cloud engineers
+- Finance staff
+
+### Access Management Responsibilities
+Employees must follow secure access practices:
+- Use strong passwords
+- Enable multi-factor authentication
+- Avoid sharing credentials
+
+### Acceptable Use Policy
+Define rules for:
+- Use of corporate devices
+- Internet usage
+- Cloud services
+- Email communication
+
+### Employee Exit Management
+When employees leave the organization:
+- Revoke system access immediately
+- Retrieve company devices
+- Disable credentials
+
+### Tools & Technologies
+- Security awareness platforms (KnowBe4, Proofpoint)
+- Identity management systems
+- HR onboarding management tools
+- Phishing simulation tools
+
+### Best Practices
+- Focus on human-centric security culture
+- Reinforce awareness regularly
+- Track employee compliance metrics
+- Include security responsibilities in job roles
+
+---
+
+### Technological Controls
+
+Technological controls protect digital infrastructure, applications, and data used by the SaaS CRM platform. These controls address major risks such as suspicious cloud logins and unauthorized system access.
+
+## Key Implementation Activities
+
+### Identity and Access Management (IAM)
+Implement strong access control mechanisms:
+- Role-Based Access Control (RBAC)
+- Least privilege access model
+- Multi-Factor Authentication (MFA)
+- Privileged Access Management
+
+Ensure:
+- Developers only access required repositories
+- Admin accounts are strictly controlled
+
+### Cloud Security Controls
+Since the CRM platform is cloud-hosted:
+- Configure secure cloud access policies
+- Implement network segmentation
+- Monitor cloud activity logs
+- Perform regular cloud security audits.
+
+### Endpoint Security
+Protect employee devices used for development and operations.
+
+Key controls:
+- Endpoint Detection and Response (EDR)
+- Disk encryption
+- Device patch management
+- Anti-malware protection
+
+### Network Security
+Secure network infrastructure using:
+- Firewalls
+- VPN access for remote employees
+- Intrusion Detection Systems
+- Network segmentation
+
+### Logging & Monitoring
+Monitor systems to detect suspicious activities.
+Log sources include:
+- Cloud access logs
+- Authentication logs
+- API usage logs
+- Firewall logs
+
+Security teams must review logs regularly.
+
+### Secure Software Development (SSDLC)
+Because Qlyntix is a product development company:
+- Implement secure coding practices
+- Conduct code reviews
+- Perform application security testing
+
+Security must be integrated into the software development lifecycle.
+
+### Data Protection & Encryption
+Protect sensitive data through:
+- Encryption at rest
+- Encryption in transit
+- Secure key management
+
+Sensitive data includes:
+- Customer CRM records
+- Financial information
+- Employee records
+
+### Tools & Technologies
+Examples of technologies commonly used in SaaS security:
+- Identity management platforms
+- SIEM systems for monitoring
+- Vulnerability scanners
+- Cloud security monitoring tools
+- DevSecOps tools
+
+### Best Practices
+- Apply zero trust principles
+- Automate vulnerability scanning
+- Integrate security into CI/CD pipelines
+- Monitor logs continuously
+- Conduct regular penetration testing
