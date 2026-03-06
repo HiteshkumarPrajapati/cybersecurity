@@ -671,6 +671,53 @@ Identify and classify all assets within ISMS scope to ensure complete risk cover
 - Include vendor-managed assets.
 
 ---
+### Risk Evaluation
+
+### Purpose
+
+Compare assessed risks against defined risk acceptance criteria.
+
+---
+
+### Key Activities
+
+- Rank risks from highest to lowest.
+- Identify unacceptable risks.
+- Determine treatment priority.
+- Present high-risk items to management.
+
+---
+
+### Risk Categories Example
+
+- **Critical**: Immediate action required (e.g., no MFA on admin accounts).
+- **High**: Treatment plan within defined timeframe.
+- **Medium**: Monitor and treat if resources allow.
+- **Low**: Acceptable with monitoring.
+
+| Risk Score | Risk Level | Action Required            |
+|------------|------------|----------------------------|
+| 1–5        | Low        | Acceptable with monitoring |
+| 6–10       | Medium     | Treatment recommended      |
+| 11–15      | High       | Treatment required         |
+| 16–25      | Critical   | Immediate action           |
+---
+
+### Tools
+
+- Risk heat map dashboards
+- Risk matrix charts
+- GRC software for tracking
+
+---
+
+### Best Practices
+
+- Ensure evaluation is management-approved.
+- Review high risks quarterly.
+- Maintain documented evidence for auditors.
+
+---
 
 ### Risk Assessment
 
@@ -729,47 +776,17 @@ Identify threats and vulnerabilities impacting each asset.
 - Include both technical and business risks.
 - Document all assumptions.
 
----
+### Risk Assessment Register
 
-### Risk Evaluation
-
-### Purpose
-
-Compare assessed risks against defined risk acceptance criteria.
-
----
-
-### Key Activities
-
-- Rank risks from highest to lowest.
-- Identify unacceptable risks.
-- Determine treatment priority.
-- Present high-risk items to management.
-
----
-
-### Risk Categories Example
-
-- **Critical**: Immediate action required (e.g., no MFA on admin accounts).
-- **High**: Treatment plan within defined timeframe.
-- **Medium**: Monitor and treat if resources allow.
-- **Low**: Acceptable with monitoring.
-
----
-
-### Tools
-
-- Risk heat map dashboards
-- Risk matrix charts
-- GRC software for tracking
-
----
-
-### Best Practices
-
-- Ensure evaluation is management-approved.
-- Review high risks quarterly.
-- Maintain documented evidence for auditors.
+| Asset ID | Asset Name                  | Asset Type      | Owner          | Classification | Location     | Criticality |
+|----------|-----------------------------|-----------------|----------------|----------------|--------------|-------------|
+| A001     | CRM Customer Database       | Information     | CTO            | Restricted     | Cloud        | High        |
+| A002     | Source Code Repository      | Software        | Dev Lead       | Confidential   | Git Platform | High        |
+| A003     | Employee Records            | Information     | HR Manager     | Confidential   | HR System    | Medium      |
+| A004     | Financial Accounting System | Application     | Finance Head   | Restricted     | Cloud        | High        |
+| A005     | Marketing Lead Database     | Information     | Marketing Head | Confidential   | CRM          | Medium      |
+| A006     | Cloud Infrastructure        | Infrastructure  | Cloud Manager  | Restricted     | AWS/Azure    | High        |
+| A007     | Vendor Integration API      | External System | Procurement    | Confidential   | Cloud        | High        |
 
 ---
 
@@ -829,6 +846,15 @@ Select appropriate actions to address unacceptable risks.
 - Obtain management approval.
 - Track implementation progress.
 
+### Risk Treatment Plan
+
+| Risk ID | Treatment Option | Control Action                           | Responsible   | Target Date | Status |
+|---------|------------------|------------------------------------------|---------------|-------------|--------|
+| R001    | Mitigate         | Implement MFA for all admin accounts     | IT Manager    | 60 Days     | Open   |
+| R002    | Mitigate         | Conduct phishing awareness training      | HR            | 45 Days     | Open   |
+| R003    | Mitigate         | Enforce RBAC and IAM audit               | Cloud Manager | 60 Days     | Open   |
+| R004    | Mitigate         | Implement vendor risk assessment process | Procurement   | 90 Days     | Open   |
+| R005    | Mitigate         | Access rights review quarterly           | Dev Lead      | 30 Days     | Open   |
 ---
 
 ### Statement of Applicability (SoA)
@@ -868,6 +894,18 @@ Document selected security controls and justify inclusion or exclusion.
 - GRC platform
 - Control mapping tools
 
+### Statement of Applicability (SoA)
+
+| Control Domain       | Control Description          | Applicable (Y/N) | Justification                     | Reference Document       |
+|----------------------|------------------------------|------------------|-----------------------------------|--------------------------|
+| Access Control       | Multi-Factor Authentication  | Yes              | Mitigate unauthorized access      | Access Control Policy    |
+| Cryptography         | Encryption of sensitive data | Yes              | Protect CRM & financial data      | Encryption Policy        |
+| Secure Development   | Secure SDLC practices        | Yes              | Protect source code               | SDLC Procedure           |
+| Supplier Security    | Vendor risk management       | Yes              | Mitigate third-party risk         | Vendor Policy            |
+| Incident Management  | Incident response process    | Yes              | Address phishing and breach risks | IR Procedure             |
+| Physical Security    | Office access control        | Yes              | Protect corporate systems         | Physical Security Policy |
+| Logging & Monitoring | Log monitoring via SIEM      | Yes              | Detect suspicious logins          | Monitoring SOP           |
+| Business Continuity  | Backup and recovery controls | Yes              | Ensure SaaS availability          | BCP Document             |
 ---
 
 ### Best Practices
