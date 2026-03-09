@@ -1147,3 +1147,292 @@ Examples of technologies commonly used in SaaS security:
 - Integrate security into CI/CD pipelines
 - Monitor logs continuously
 - Conduct regular penetration testing
+
+## Phase 5: Performance Evaluation
+
+
+### 1. Monitor and Measure ISMS Processes
+
+Monitoring and measurement activities help Qlyntix determine whether the implemented security controls and policies are functioning effectively.
+
+### Key Activities
+
+### Define Security Performance Metrics (KPIs)
+
+Establish measurable indicators to track ISMS effectiveness.
+
+Examples of ISMS metrics:
+
+- Number of security incidents detected per month
+- Number of phishing attempts reported by employees
+- Percentage of systems patched within defined timeframes
+- Percentage of employees completing security awareness training
+- Number of access control violations
+- Vendor security assessment completion rate
+
+These metrics help management understand the security posture of the organization.
+
+### Continuous Security Monitoring
+
+Implement continuous monitoring for critical systems including:
+
+- Cloud infrastructure
+- CRM application environment
+- User authentication systems
+- Network activity logs
+
+Monitoring should detect:
+
+- Suspicious login activities
+- Unauthorized access attempts
+- Malware or ransomware activity
+- Data exfiltration attempts
+
+### Log Monitoring and Security Event Detection
+
+Security logs must be collected and analyzed from:
+
+- Authentication systems
+- Cloud platforms
+- Firewalls
+- Endpoint devices
+- Application servers
+
+Regular log analysis helps identify potential security incidents early.
+
+### Vulnerability Monitoring
+
+Conduct periodic vulnerability assessments to identify system weaknesses.
+
+Activities include:
+
+- Network vulnerability scanning
+- Application security testing
+- Cloud security assessments
+
+Findings must be tracked and remediated.
+
+### Tools and Technologies
+
+Examples of industry tools used for monitoring:
+
+- SIEM platforms for centralized log monitoring
+- Cloud security monitoring tools
+- Vulnerability scanning platforms
+- Endpoint detection and response systems
+- Security dashboards for reporting metrics
+
+### Best Practices
+
+- Automate monitoring processes where possible
+- Establish real-time alerting mechanisms
+- Maintain audit logs for investigation
+- Ensure metrics are reviewed periodically by management
+
+---
+
+### 2. Conduct Internal Audit
+
+Internal audits verify whether the ISMS is implemented according to the requirements of the standard and organizational policies.
+
+### Purpose of Internal Audit
+
+- Evaluate compliance with the requirements of the standard
+- Verify that implemented controls are effective
+- Identify weaknesses before external certification audits
+- Ensure departments follow established security policies
+
+### Internal Audit Planning
+
+An internal audit program should be developed covering all departments such as:
+
+- HR
+- Finance
+- Development
+- IT
+- Cloud Operations
+- Marketing
+- Vendor Management
+
+The audit program should define:
+
+- Audit scope
+- Audit schedule
+- Audit criteria
+- Audit methodology
+
+### Internal Audit Activities
+
+Internal auditors perform the following tasks:
+
+- Review ISMS policies and procedures
+- Verify risk assessment and risk treatment documentation
+- Evaluate implementation of security controls
+- Review access management processes
+- Assess vendor security management practices
+- Examine security incident records
+
+Auditors should collect evidence through:
+
+- Document review
+- Interviews
+- System inspection
+- Sampling of records
+
+### Internal Audit Reporting
+
+After completing the audit:
+
+- Findings are documented
+- Nonconformities are identified
+- Improvement opportunities are suggested
+
+Audit reports must be shared with top management.
+
+### Tools and Technologies
+
+Typical tools used during internal audits include:
+
+- Audit management software
+- Documentation repositories
+- Risk and compliance management platforms
+- Checklists aligned with ISO control requirements
+
+### Best Practices
+
+- Ensure auditor independence
+- Follow risk-based audit planning
+- Maintain detailed audit evidence
+- Conduct audits at least annually
+
+---
+
+### 3. Conduct Management Review
+
+Management review ensures that top leadership evaluates the effectiveness of the ISMS and makes strategic decisions for improvement.
+
+This activity demonstrates leadership commitment required by the standard.
+
+### Objectives of Management Review
+
+- Evaluate ISMS performance
+- Review security risks and incidents
+- Assess resource requirements
+- Approve improvements to security controls
+
+### Inputs to Management Review
+
+Management reviews should consider:
+
+- Results of internal audits
+- Security incident reports
+- Status of risk treatment actions
+- Performance metrics and KPIs
+- Changes in business environment
+- Regulatory or contractual requirements
+- Vendor risk management results
+
+### Management Review Activities
+
+Top management should:
+
+- Assess effectiveness of ISMS controls
+- Evaluate unresolved risks
+- Approve corrective actions
+- Allocate additional resources if required
+- Set new security objectives
+
+### Outputs of Management Review
+
+Outcomes of management review may include:
+
+- Decisions on ISMS improvements
+- Updates to security policies
+- Resource allocation for security initiatives
+- Strategic changes to risk management processes
+
+### Tools and Technologies
+
+Management reviews can be supported using:
+
+- ISMS performance dashboards
+- Risk management reports
+- Security incident reports
+- Business intelligence tools for data visualization
+
+### Best Practices
+
+- Conduct management reviews at least annually
+- Document meeting minutes
+- Track action items from management decisions
+- Align ISMS objectives with business goals
+
+---
+
+### 4. Treat Nonconformities
+
+Nonconformities occur when processes or controls do not meet defined ISMS requirements.
+
+They may arise from:
+
+- Internal audits
+- Security incidents
+- Monitoring results
+- External audit findings
+
+### Nonconformity Management Process
+
+### Step 1: Identify Nonconformity
+
+Examples may include:
+
+- Employees not completing security training
+- Missing access control documentation
+- Incomplete vendor security assessments
+- Failure to patch systems on time
+
+### Step 2: Root Cause Analysis
+
+Investigate the underlying cause of the problem.
+
+Techniques include:
+
+- Root cause analysis
+- Problem investigation meetings
+- Security incident analysis
+
+### Step 3: Corrective Action
+
+Define actions to eliminate the root cause.
+
+Examples:
+
+- Improve employee training programs
+- Update access management procedures
+- Strengthen monitoring processes
+
+### Step 4: Verify Effectiveness
+
+Confirm that corrective actions resolve the issue and prevent recurrence.
+
+This may involve:
+
+- Follow-up audits
+- Process validation
+- Management review updates
+
+### Tools and Technologies
+
+Organizations typically use:
+
+- Issue tracking systems
+- Corrective action management tools
+- Risk management platforms
+- Security incident management systems
+
+### Best Practices
+
+- Maintain a nonconformity register
+- Prioritize corrective actions based on risk level
+- Track corrective actions to closure
+- Integrate lessons learned into security improvements
