@@ -1436,3 +1436,379 @@ Organizations typically use:
 - Prioritize corrective actions based on risk level
 - Track corrective actions to closure
 - Integrate lessons learned into security improvements
+
+## Phase 6: Certification Audit
+
+### Stage 1 Audit (Documentation Review)
+
+The Stage 1 audit is a preliminary assessment that focuses on reviewing the organization’s ISMS documentation and readiness for the full certification audit.
+
+### Objectives of Stage 1 Audit
+
+- Verify that the ISMS documentation meets the requirements of the standard
+- Evaluate whether the organization is ready for the Stage 2 audit
+- Identify documentation gaps or weaknesses
+- Confirm the scope and boundaries of the ISMS
+
+### Key Activities
+
+#### Review ISMS Documentation
+
+Auditors review key ISMS documents including:
+
+- Information Security Policy
+- ISMS Scope Document
+- Risk Assessment and Risk Treatment Methodology
+- Asset Inventory
+- Risk Register
+- Risk Treatment Plan
+- Statement of Applicability (SoA)
+- Procedures
+   - Access provisioning/deprovisioning procedures
+   - Incident response procedures
+   - Business continuity and disaster recovery procedures 
+   - Vendor assessment procedures
+   - Risk assessment procedures
+   - Asset management procedures
+   - Backup and restore procedures
+   - Change management procedures
+   - Patch management procedures
+   - Vulnerability management procedures
+   - Security monitoring procedures
+   - Log management procedures
+   - Physical security procedures
+   - Data disposal procedures
+- Policies
+   - Access Control Policy
+   - Incident Response Policy
+   - Business Continuity Policy
+   - Vendor/Supplier Security Policy
+   - Risk Management Policy
+   - Asset Management Policy
+   - Data Classification Policy
+   - Cryptography Policy
+   - Backup and Recovery Policy
+   - Change Management Policy
+   - Acceptable Use Policy
+   - Remote Access Policy
+   - Human Resources Security Policy
+   - Physical Security Policy
+   - Network Security Policy
+- Business Continuity Plans
+- Internal Audit Reports
+- Records & Logs
+   - Asset register (complete, up-to-date)
+   - Risk register (all risks identified, treatment plans)
+   - Incident log (all incidents documented)
+   - Access review records (quarterly for privileged, semi-annual for users)
+   - Training records (100% completion for required training)
+   - Background check records (all employees)
+   - Vendor assessment records (critical vendors assessed)
+   - Change records (approved change tickets)
+   - Backup logs (successful backups)
+   - Patch management records (patch compliance)
+   - Vulnerability scan results (remediation tracking)
+   - Internal audit reports (completed, findings closed)
+   - Management review minutes (decisions documented)
+   - Corrective action register (NCRs and resolutions)
+
+These documents demonstrate that the organization has established a structured ISMS framework.
+
+#### Verify ISMS Scope and Context
+
+Auditors ensure that the defined ISMS scope properly includes:
+
+- CRM product development environment
+- Cloud infrastructure
+- IT systems supporting the SaaS platform
+- Departments handling sensitive data (HR, Finance, Development, Marketing, IT)
+
+The scope must clearly define included systems, processes, and locations.
+
+#### Evaluate Risk Management Framework
+
+Auditors check whether:
+
+- Risk assessment methodology is documented
+- Risk evaluation criteria are defined
+- Risks related to phishing, unauthorized access, and vendor security have been identified
+- Risk treatment plans are implemented
+
+#### Confirm Statement of Applicability (SoA)
+
+Auditors review the Statement of Applicability to verify:
+
+- Selected security controls from Annex A
+- Justification for included or excluded controls
+- Alignment between risks and implemented controls
+
+#### Certification Readiness Assessment
+
+The Stage 1 audit identifies:
+
+- Documentation gaps
+- Missing procedures
+- Incomplete risk management documentation
+
+Organizations must address these gaps before the Stage 2 audit.
+
+### Tools and Technologies
+
+Organizations typically use the following tools to maintain audit-ready documentation:
+
+- Document management systems
+- Governance, Risk, and Compliance (GRC) platforms
+- Risk management tools
+- Collaboration platforms for policy management
+
+### Best Practices
+
+- Ensure all ISMS documents are approved and version-controlled
+- Maintain centralized documentation repositories
+- Ensure policies are communicated across departments
+- Conduct a pre-certification internal audit before Stage 1
+
+---
+
+### Stage 2 Audit (Implementation Audit)
+
+The Stage 2 audit evaluates whether the ISMS has been effectively implemented and operationalized across the organization.
+
+This is the main certification audit.
+
+### Objectives of Stage 2 Audit
+
+- Verify that ISMS policies and procedures are implemented
+- Confirm that security controls are operational
+- Evaluate the effectiveness of the risk management process
+- Assess employee awareness and compliance
+
+### Key Activities
+
+### Department-Level Audit
+
+Auditors evaluate ISMS implementation across departments including:
+
+- HR
+- Finance
+- Software Development
+- IT Operations
+- Cloud Operations
+- Marketing
+- Vendor Management
+
+They verify whether each department follows the defined security policies.
+
+### Verification of Security Controls
+
+Auditors verify implementation of key controls such as:
+
+- Identity and Access Management controls
+- Multi-factor authentication implementation
+- Cloud security configurations
+- Secure software development practices
+- Vendor risk management procedures
+- Backup and disaster recovery mechanisms
+- Access Control (Annex A 5.15-5.18):
+   - Access review logs (3+ quarterly reviews for privileged access)
+   - Access provisioning tickets (approved requests)
+   - Access termination logs (offboarding within 24 hours)
+   - MFA enrollment records (100% of users)
+   - Password policy enforcement (technical controls configured)
+
+- Incident Management (Annex A 5.24-5.28):
+   - Incident tickets (real incidents handled per procedure)
+   - Phishing reports (users reporting suspicious emails)
+   - Incident response exercise (tabletop or simulation completed)
+   - Post-incident review reports (lessons learned documented)
+
+- Vulnerability Management (Annex A 8.8):
+   - Vulnerability scan reports (weekly/monthly scans for 3-6 months)
+   - Patch records (critical patches within 7 days, high within 30 days)
+   - Remediation tracking (vulnerabilities addressed per SLA)
+
+- Backup and Recovery (Annex A 8.13):
+   - Backup logs (daily/weekly backups successful)
+   - Backup restoration test (at least one successful test)
+   - Offsite/offline backup verification
+
+- Security Monitoring (Annex A 8.16):
+   - SIEM logs (3-6 months of logs retained and reviewed)
+   - Security alerts (investigated and resolved)
+   - Log review records (weekly/monthly reviews)
+
+- Training and Awareness (Annex A 6.3):
+   - Training completion records (100% of employees)
+   - Phishing simulation results (3-6 months of data, improving trend)
+   - Security awareness communications (newsletters, emails)
+
+- Vendor Management (Annex A 5.19-5.23):
+   - Vendor assessments (critical vendors assessed)
+   - Vendor contracts with security clauses
+   - Vendor review meetings (annual reviews)
+
+- Business Continuity (Annex A 5.29-5.30):
+   - BCP/DRP documentation (complete and approved)
+   - BCP/DRP testing (annual test completed)
+   - Test results and improvements documented
+
+- Risk Management (Clause 6.1):
+   - Risk assessments (initial + updates)
+   - Risk treatment progress (high risks mitigated)
+   - Risk review meetings (quarterly reviews)
+
+### Review of Security Incident Management
+
+Auditors examine:
+
+- Security incident logs
+- Incident response procedures
+- Evidence of incident handling
+- Root cause analysis reports
+
+They confirm that the organization can detect and respond to cybersecurity threats effectively.
+
+### Employee Awareness Verification
+
+Auditors may interview employees to confirm that they understand:
+
+- Information security policies
+- Phishing awareness
+- Incident reporting procedures
+- Acceptable use policies
+
+This verifies the effectiveness of the security awareness program.
+
+### Evidence Collection
+
+Auditors collect evidence through:
+
+- Document review
+- System demonstrations
+- Employee interviews
+- Log inspection
+- Sampling of records
+
+Examples of evidence include:
+
+- Access control logs
+- Security training records
+- Vulnerability scan reports
+- Internal audit reports
+- Addressing Phishing Attacks:
+   - Email security gateway implemented (logs showing blocked phishing)
+   - Phishing awareness training (100% completion)
+   - Phishing simulation results (click rate reduced from baseline to <5%)
+   - User phishing reports (increasing trend - users vigilant)
+
+- Addressing Suspicious Cloud Logins:
+   - MFA implementation (100% enrollment)
+   - CASB/Conditional Access (policies configured, alerts reviewed)
+   - Privileged Access Management (admin accounts controlled)
+   - Anomalous login alerts (investigated and documented)
+
+- Addressing Access Control Weaknesses:
+   - Access control policy (approved and communicated)
+   - Access reviews (quarterly for privileged, completed)
+   - Least privilege principle (access based on role)
+   - Access provisioning workflow (manager approval required)
+
+- Addressing Vendor Risk Gaps:
+   - Vendor security policy (approved)
+   - Vendor risk assessment program (critical vendors assessed)
+   - Vendor contracts (security clauses, SLAs, DPAs)
+   - Vendor monitoring (annual reviews completed)
+
+### Tools and Technologies
+
+Common technologies used to support implementation verification include:
+
+- Identity and access management platforms
+- Security monitoring systems
+- Vulnerability scanning tools
+- Cloud security monitoring solutions
+- DevSecOps security tools
+
+### Best Practices
+
+- Ensure security controls are fully operational before audit
+- Maintain detailed evidence of control implementation
+- Conduct mock audits to test readiness
+- Train employees to respond confidently during auditor interviews
+
+---
+
+### Corrective Actions
+
+During Stage 1 or Stage 2 audits, auditors may identify nonconformities or improvement opportunities.
+
+Corrective actions must be taken to address these findings.
+
+### Types of Audit Findings
+
+### Minor Nonconformity
+
+- Small deviation from requirements
+- Does not significantly impact ISMS effectiveness
+
+Example:
+
+- Missing documentation updates
+
+### Major Nonconformity
+
+- Significant failure in ISMS implementation
+- May affect certification decision
+
+Example:
+
+- Risk assessment not conducted properly
+
+### Corrective Action Process
+
+### Identify Root Cause
+
+Analyze the underlying reason for the nonconformity using methods such as:
+
+- Root cause analysis
+- Process review
+- Incident investigation
+
+### Define Corrective Actions
+
+Examples include:
+
+- Updating policies and procedures
+- Implementing additional security controls
+- Providing additional employee training
+
+### Implement Corrective Actions
+
+Responsible teams must implement solutions within the defined timeframe.
+
+### Verify Effectiveness
+
+Verify whether corrective actions have resolved the issue.
+
+Methods include:
+
+- Follow-up audits
+- System reviews
+- Process validation
+
+### Documentation of Corrective Actions
+
+All corrective actions must be documented in a **Corrective Action Register** including:
+
+- Nonconformity description
+- Root cause
+- Corrective action plan
+- Responsible owner
+- Completion status
+
+### Best Practices
+
+- Address nonconformities promptly
+- Maintain detailed corrective action records
+- Track remediation progress regularly
+- Integrate lessons learned into ISMS improvements
