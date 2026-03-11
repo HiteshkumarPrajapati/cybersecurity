@@ -1806,3 +1806,234 @@ All corrective actions must be documented in a **Corrective Action Register** in
 - Maintain detailed corrective action records
 - Track remediation progress regularly
 - Integrate lessons learned into ISMS improvements
+
+## Phase 7: Continuous Improvement
+
+### Risk Reassessment
+
+Risk reassessment ensures that the organization continuously evaluates emerging threats and vulnerabilities that may impact the SaaS platform and supporting systems.
+
+### Key Activities
+
+- Reassess information security risks at regular intervals (at least annually) or when major changes occur.
+
+- Evaluate risks associated with:
+  - Cloud infrastructure updates
+  - New software releases of the CRM platform
+  - Integration of third-party services
+  - Changes in regulatory or contractual requirements
+
+- Review risks related to cybersecurity threats such as:
+  - Phishing campaigns targeting employees
+  - Unauthorized cloud login attempts
+  - API security vulnerabilities
+  - Vendor-related risks
+
+- Update the risk register with newly identified threats and vulnerabilities.
+
+- Recalculate risk scores based on updated likelihood and impact assessments.
+
+- Update the risk treatment plan if new risks exceed acceptable thresholds.
+
+### Tools and Technologies
+
+Organizations typically use the following tools to support risk reassessment:
+
+- Risk management platforms
+- Vulnerability scanning tools
+- Cloud security posture management tools
+- Threat intelligence platforms
+- Security monitoring dashboards
+
+### Best Practices
+
+- Integrate risk reassessment into the software development lifecycle (SDLC).
+- Conduct risk assessments whenever major infrastructure or system changes occur.
+- Maintain a centralized risk register for tracking and monitoring risks.
+- Involve cross-functional teams such as IT, Development, HR, and Finance in risk reviews.
+
+---
+
+### Internal Audit
+
+Internal audits ensure that the ISMS remains compliant with the requirements of the standard and organizational policies.
+
+### Key Activities
+
+- Conduct periodic internal audits to evaluate the effectiveness of ISMS controls.
+
+- Develop an annual internal audit program covering all departments including:
+  - HR
+  - Finance
+  - Development
+  - IT Operations
+  - Cloud Operations
+  - Marketing
+  - Vendor Management
+
+- Verify whether security controls are implemented and functioning as intended.
+
+- Review key ISMS documentation including:
+  - Risk assessment reports
+  - Statement of Applicability
+  - Incident response records
+  - Access control logs
+  - Security awareness training records
+
+- Identify gaps, nonconformities, and opportunities for improvement.
+
+### Tools and Technologies
+
+Organizations often use the following tools for audit management:
+
+- Audit management software
+- Compliance tracking platforms
+- Document management systems
+- Risk and compliance dashboards
+
+### Best Practices
+
+- Ensure internal auditors are independent from the processes being audited.
+- Follow a risk-based audit approach focusing on high-risk areas.
+- Maintain detailed evidence and audit trails.
+- Track audit findings until closure.
+
+---
+
+### Policy Review
+
+Information security policies must be periodically reviewed to ensure they remain relevant and effective.
+
+### Key Activities
+
+- Conduct annual reviews of all ISMS policies and procedures.
+
+- Update policies when:
+  - New security risks emerge
+  - Technology platforms change
+  - Regulatory requirements are updated
+  - Organizational structure changes
+
+- Review policies including:
+  - Information Security Policy
+  - Access Control Policy
+  - Incident Response Policy
+  - Vendor Security Policy
+  - Data Protection Policy
+  - Business Continuity Policy
+
+- Ensure policies reflect current practices used within the organization.
+
+### Tools and Technologies
+
+Policy management can be supported using:
+
+- Document management systems
+- Collaboration platforms
+- Compliance management tools
+
+### Best Practices
+
+- Maintain version control for policy documents.
+- Communicate policy updates to all employees.
+- Conduct periodic employee training when policies change.
+- Ensure policies align with the organization’s risk management strategy.
+
+---
+
+### Management Review
+
+Management review ensures continued leadership involvement in maintaining and improving the ISMS.
+
+### Key Activities
+
+Top management must periodically evaluate the effectiveness of the ISMS by reviewing:
+
+- Results of internal audits
+- Security incident reports
+- Risk assessment updates
+- Performance metrics and security KPIs
+- Vendor security performance
+- Compliance with legal and contractual requirements
+
+Management should assess whether:
+
+- Security objectives are being achieved
+- Resources allocated for security are sufficient
+- Security risks are being effectively managed
+
+### Outputs of Management Review
+
+Management reviews may result in:
+
+- Updates to ISMS policies and procedures
+- Allocation of additional resources
+- Changes to security objectives
+- Approval of improvement initiatives
+
+### Tools and Technologies
+
+Organizations typically use:
+
+- ISMS performance dashboards
+- Risk management reports
+- Security monitoring reports
+- Data visualization tools
+
+### Best Practices
+
+- Conduct management reviews at least once per year.
+- Document meeting minutes and action items.
+- Track completion of management decisions.
+- Align ISMS goals with organizational strategy.
+
+---
+
+### Corrective Actions
+
+Corrective actions address nonconformities and security weaknesses identified through audits, monitoring, or incidents.
+
+### Sources of Nonconformities
+
+Nonconformities may arise from:
+
+- Internal audit findings
+- Security incidents
+- Monitoring and measurement results
+- External certification audits
+- Employee reports of security weaknesses
+
+### Corrective Action Process
+
+The corrective action process typically includes:
+
+### Identification of Nonconformity
+Document the issue and its impact on the ISMS.
+
+### Root Cause Analysis
+Identify the underlying cause of the issue.
+
+### Define Corrective Action Plan
+Develop actions to eliminate the root cause.
+
+### Implementation of Corrective Actions
+Assign responsibility for implementing solutions.
+
+#### Verification of Effectiveness
+Confirm that the issue has been resolved and does not recur.
+
+### Tools and Technologies
+
+Corrective action management can be supported using:
+
+- Issue tracking systems
+- Incident management platforms
+- Risk management software
+- Compliance monitoring tools
+
+### Best Practices
+
+- Maintain a corrective action register.
+- Prioritize actions based on risk severity.
+- Track corrective actions to closure.
+- Use lessons learned to improve ISMS processes.
