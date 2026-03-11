@@ -1748,21 +1748,15 @@ Corrective actions must be taken to address these findings.
 
 ### Minor Nonconformity
 
-- Small deviation from requirements
-- Does not significantly impact ISMS effectiveness
-
-Example:
-
-- Missing documentation updates
+- Missing version control on some documents
+- Some procedures lack sufficient detail
+- References between documents not accurate
 
 ### Major Nonconformity
 
-- Significant failure in ISMS implementation
-- May affect certification decision
-
-Example:
-
-- Risk assessment not conducted properly
+- Information Security Policy doesn't meet Clause 5.2 requirements
+- SOA incomplete (not all 93 controls addressed)
+- Risk assessment methodology not documented
 
 ### Corrective Action Process
 
