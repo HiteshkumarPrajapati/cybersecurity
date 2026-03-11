@@ -1770,10 +1770,10 @@ Analyze the underlying reason for the nonconformity using methods such as:
 
 ### Define Corrective Actions
 
-Examples include:
-
+- Add version control system in documentation, process and policies
 - Updating policies and procedures
 - Implementing additional security controls
+- Documented Risk assessment methodology
 - Providing additional employee training
 
 ### Implement Corrective Actions
