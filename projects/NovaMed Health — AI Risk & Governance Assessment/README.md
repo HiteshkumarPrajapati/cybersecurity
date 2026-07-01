@@ -1,4 +1,4 @@
-# 🤖 NovaMed Health — AI Risk & Governance Assessment
+# NovaMed Health — AI Risk & Governance Assessment
 
 **Organisation:** NovaMed Health *(fictional)*
 **Sector:** Healthcare / Clinical Technology
