@@ -1,8 +1,8 @@
-# GRC Portfolio — Cyber Risk Register
+# Risk Register
 
 ## What this proves
 
-This portfolio demonstrates practical, end-to-end cyber risk assessment skills as they are applied in Australian GRC (Governance, Risk & Compliance) practice:
+In this project, I built a cyber risk register based on how risk managed in organisations.
 
 - Identifying realistic cyber risks across a business (technical, process, and people-related)
 - Rating risks using a structured **likelihood × impact** methodology
@@ -51,11 +51,7 @@ Full definitions of the rating scale, matrix, and prioritisation logic are in [`
 
 ## Fictional scenarios
 
-Two contrasting organisations were used deliberately, to show risk assessment isn't one-size-fits-all:
-
 - **SaaS CRM provider** (`risk-register-saas-crm.md`) — a cloud-native, multi-tenant B2B software vendor. Risk profile is dominated by data segregation, API security, third-party/subprocessor risk, and availability.
 - **Small accounting firm** (`risk-register-small-business.md`) — a 25-staff professional services firm handling TFNs and client financial data. Risk profile is dominated by business email compromise, ransomware, legacy on-prem systems, and reliance on an outsourced IT provider.
 
-## Disclaimer
 
-All organisation names, staff, and specific incidents referenced in this portfolio are fictional and created for demonstration purposes only. The methodology, control mappings, and treatment logic reflect genuine industry practice.
