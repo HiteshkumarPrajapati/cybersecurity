@@ -16,7 +16,7 @@ The register is not a compliance checklist — it is written to reflect how a ri
 
 | Framework | Purpose in this portfolio |
 |---|---|
-| **AS ISO 31000:2018 — Risk Management Guidelines** | Provides the overarching risk management process (establish context → identify → analyse → evaluate → treat → monitor & review → communicate & consult) and the likelihood/impact rating structure used throughout. |
+| **AS ISO 31000:2018 (Risk Management Guidelines)** | Provides the overarching risk management process (establish context → identify → analyse → evaluate → treat → monitor & review → communicate & consult) and the likelihood/impact rating structure used throughout. |
 | **ISO/IEC 27001:2022 (Annex A)** | Used to map each risk to a relevant information security control from the four Annex A themes: Organisational, People, Physical, Technological. |
 | **ACSC Essential Eight** | Used as the primary technical control baseline for Australian organisations, including Maturity Level references (ML0–ML3), per the Australian Cyber Security Centre's Essential Eight Maturity Model. |
 | **OAIC Notifiable Data Breaches (NDB) scheme / Privacy Act 1988** | Referenced where a risk could trigger a mandatory data breach notification obligation under Australian law. |
@@ -37,21 +37,23 @@ grc-risk-register/
 
 Each risk register uses the same nine-field structure:
 
-1. **Risk ID** — unique reference (e.g. `CRM-R01`)
-2. **Risk Description** — plain-English statement of what could go wrong, and the business consequence
-3. **Threat / Vulnerability** — what could exploit what
-4. **Existing Controls** — what is already in place today
-5. **Inherent Risk** — likelihood × impact *before* crediting existing controls
-6. **Residual Risk** — likelihood × impact *after* crediting existing controls
-7. **Framework Mapping** — the relevant ISO 27001 Annex A control and/or Essential Eight strategy
-8. **Treatment Recommendation** — the recommended next action and treatment type (Mitigate/Transfer/Accept/Avoid)
-9. **Risk Owner & Target Date** — who is accountable and by when
+1. **Risk ID** (unique reference e.g. `CRM-R01`)
+2. **Risk Description** (plain-English statement of what could go wrong, and the business consequence)
+3. **Threat / Vulnerability** (what could exploit what)
+4. **Existing Controls** (what is already in place)
+5. **Inherent Risk** (likelihood × impact *before* crediting existing controls)
+6. **Residual Risk** (likelihood × impact *after* crediting existing controls)
+7. **Framework Mapping** (the relevant ISO 27001 Annex A control and/or Essential Eight strategy)
+8. **Treatment Recommendation** (the recommended next action and treatment type (Mitigate/Transfer/Accept/Avoid)
+9. **Risk Owner & Target Date** (who is accountable and by when)
 
-Full definitions of the rating scale, matrix, and prioritisation logic are in [`notes/risk-rating-methodology.md`](notes/risk-rating-methodology.md).
+Full definitions of the rating scale, matrix, and prioritisation logic are in [`Risk rating methodology`](notes/risk-rating-methodology.md).
 
 ## Fictional scenarios
 
-- **SaaS CRM provider** (`risk-register-saas-crm.md`) — a cloud-native, multi-tenant B2B software vendor. Risk profile is dominated by data segregation, API security, third-party/subprocessor risk, and availability.
-- **Small accounting firm** (`risk-register-small-business.md`) — a 25-staff professional services firm handling TFNs and client financial data. Risk profile is dominated by business email compromise, ransomware, legacy on-prem systems, and reliance on an outsourced IT provider.
+- **[`SaaS CRM provider`](risk-register-saas-crm.md)** 
+     A cloud-native, multi-tenant B2B software vendor. Risk profile is dominated by data segregation, API security, third-party/subprocessor risk, and availability.
+- **[`Small accounting firm`](risk-register-small-business.md)** 
+    A 25-staff professional services firm handling TFNs and client financial data. Risk profile is dominated by business email compromise, ransomware, legacy on-prem systems, and reliance on an outsourced IT provider.
 
 
