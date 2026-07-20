@@ -1,6 +1,6 @@
-# Cyber Risk Register — CloudReach CRM (Fictional SaaS CRM Provider)
+# Risk Register for CloudReach CRM 
 
-**Entity profile:** CloudReach CRM is a fictional B2B SaaS company providing a multi-tenant customer relationship management platform to ~400 mid-market Australian and NZ customers. It processes customer PII, sales/contract data, and integrates with third-party billing (Stripe) and email providers. Hosted on AWS (ap-southeast-2), ~45 staff, no dedicated CISO — security function sits under the Head of Engineering with GRC support.
+**Entity profile:** CloudReach CRM is a fictional B2B SaaS company providing a multi-tenant customer relationship management platform to ~400 mid-market Australian and NZ customers. It processes customer PII, sales/contract data, and integrates with third-party billing (Stripe) and email providers. Hosted on AWS (ap-southeast-2), ~45 staff, no dedicated CISO, security function sits under the Head of Engineering with GRC support.
 
 **Assessment date:** July 2026 · **Assessed by:** GRC Analyst (portfolio exercise) · **Next review:** Quarterly
 **Rating scale, matrix, and methodology:** see [`notes/risk-rating-methodology.md`](notes/risk-rating-methodology.md)
@@ -27,17 +27,17 @@
 | CRM-R14 | Backup restoration failure during a real incident | Business Continuity | High (12) | Medium (6) | Mitigate | Cloud Platform Lead | Open |
 | CRM-R15 | Cloud provider regional outage (AWS ap-southeast-2) | Business Continuity | Medium (8) | Low (4) | Accept | Cloud Platform Lead | Accepted |
 
-**Portfolio view:** 2 Extreme, 8 High, 5 Medium inherent risks; after crediting existing controls, residual sits at 0 Extreme, 0 High, 13 Medium, 2 Low. No risk currently exceeds the organisation's stated appetite (Low–Medium) without an active treatment plan.
+**Portfolio view:** 2 Extreme, 8 High, 5 Medium inherent risks after crediting existing controls, residual sits at 0 Extreme, 0 High, 13 Medium, 2 Low. No risk currently exceeds the organisation's stated appetite (Low–Medium) without an active treatment plan.
 
 ---
 
-## CRM-R01 — Ransomware via phishing on engineering endpoint
+## CRM-R01 (Ransomware via phishing on engineering endpoint)
 
 **Risk description:** If an engineer or support staff member opens a malicious attachment or link in a phishing email, malware could execute on their laptop, potentially spreading to shared drives or CI/CD credentials and disrupting product delivery and customer service.
 
 **Threat / Vulnerability:** External threat actor (commodity ransomware-as-a-service) exploiting user susceptibility to phishing and insufficient endpoint hardening.
 
-**Existing controls:** Microsoft Defender for Endpoint on all corporate devices; email filtering via Microsoft Defender for Office 365 (Safe Links/Safe Attachments); annual (not quarterly) security awareness training; local admin rights not fully restricted on developer laptops.
+**Existing controls:** Microsoft Defender for Endpoint on all corporate devices email filtering via Microsoft Defender for Office 365 (Safe Links/Safe Attachments) annual (not quarterly) security awareness training local admin rights not fully restricted on developer laptops.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -45,25 +45,25 @@
 | **Residual** | 3 – Possible | 4 – Major | **High (12)** |
 
 **Framework mapping:**
-- ACSC Essential Eight: *Patch Applications* (ML1 — patching cadence not consistently enforced), *Restrict Administrative Privileges* (ML1 — local admin still granted to engineers), *User Application Hardening* (ML1), *Regular Backups* (ML2)
+- ACSC Essential Eight: *Patch Applications* (ML1, patching cadence not consistently enforced), *Restrict Administrative Privileges* (ML1, local admin still granted to engineers), *User Application Hardening* (ML1), *Regular Backups* (ML2)
 - ISO/IEC 27001:2022 Annex A: A.8.7 (Protection against malware), A.6.3 (Awareness, education and training), A.8.23 (Web filtering)
 
 **Treatment recommendation (Mitigate):**
 1. Move security awareness training to a quarterly cadence with phishing simulations and measured click/report rates.
-2. Remove standing local admin rights from developer laptops; implement a just-in-time elevation process.
+2. Remove standing local admin rights from developer laptops implement a just-in-time elevation process.
 3. Formalise a patch SLA (critical patches within 7 days) and track compliance via Intune/Defender dashboards.
 
 **Owner:** Head of Engineering · **Target date:** Q3 2026 · **Status:** Open
 
 ---
 
-## CRM-R02 — Misconfigured cloud storage exposing customer PII
+## CRM-R02 (Misconfigured cloud storage exposing customer PII)
 
 **Risk description:** If an S3 bucket or equivalent storage resource used to hold customer export files or backups is misconfigured with public or overly broad access, customer PII (names, emails, phone numbers, and CRM notes) could be exposed to unauthorised parties.
 
-**Threat / Vulnerability:** Human error during infrastructure changes; absence of automated configuration guardrails; opportunistic external scanning for open cloud storage.
+**Threat / Vulnerability:** Human error during infrastructure changes absence of automated configuration guardrails opportunistic external scanning for open cloud storage.
 
-**Existing controls:** AWS Config rules flag public S3 buckets; block-public-access set as an account-level default; infrastructure changes go through Terraform with peer review — but exceptions have historically been made for "temporary" manual changes.
+**Existing controls:** AWS Config rules flag public S3 buckets block-public-access set as an account-level default infrastructure changes go through Terraform with peer review, but exceptions have historically been made for "temporary" manual changes.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -71,11 +71,11 @@
 | **Residual** | 2 – Unlikely | 5 – Severe | **High (10)** |
 
 **Framework mapping:**
-- ACSC Essential Eight: no direct E8 strategy (cloud configuration sits outside the Essential Eight's on-prem/endpoint focus) — treated as a supplementary control area
+- ACSC Essential Eight: no direct E8 strategy (cloud configuration sits outside the Essential Eight's on-prem/endpoint focus) treated as a supplementary control area
 - ISO/IEC 27001:2022 Annex A: A.8.9 (Configuration management), A.8.12 (Data leakage prevention), A.5.10 (Acceptable use of information and assets), A.5.34 (Privacy and protection of PII)
 
 **Treatment recommendation (Mitigate):**
-1. Remove standing permission for manual (non-Terraform) changes to storage resources; require all changes through pipeline with mandatory peer review.
+1. Remove standing permission for manual (non-Terraform) changes to storage resources require all changes through pipeline with mandatory peer review.
 2. Enable AWS GuardDuty and Macie for continuous sensitive-data and anomaly detection on storage buckets.
 3. Run a quarterly cloud configuration review against the CIS AWS Foundations Benchmark.
 
@@ -83,13 +83,13 @@
 
 ---
 
-## CRM-R03 — Privileged insider misuse of production database access
+## CRM-R03 (Privileged insider misuse of production database access)
 
 **Risk description:** If an engineer with standing production database access intentionally or accidentally exports, modifies, or deletes customer data outside of an authorised change process, customers could suffer data loss or a breach of confidentiality, and CloudReach could face contractual and reputational consequences.
 
-**Threat / Vulnerability:** Malicious or careless insider with excessive standing privileges; lack of query-level logging/alerting.
+**Threat / Vulnerability:** Malicious or careless insider with excessive standing privileges lack of query-level logging/alerting.
 
-**Existing controls:** Production database access restricted to a named group of senior engineers; access reviewed at time of hire only (not periodically); all access via bastion host with session recording; no automated alerting on bulk data export queries.
+**Existing controls:** Production database access restricted to a named group of senior engineers access reviewed at time of hire only (not periodically) all access via bastion host with session recording no automated alerting on bulk data export queries.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -97,7 +97,7 @@
 | **Residual** | 2 – Unlikely | 4 – Major | **Medium (8)** |
 
 **Framework mapping:**
-- ACSC Essential Eight: *Restrict Administrative Privileges* (ML1 — no periodic recertification)
+- ACSC Essential Eight: *Restrict Administrative Privileges* (ML1, no periodic recertification)
 - ISO/IEC 27001:2022 Annex A: A.8.2 (Privileged access rights), A.5.18 (Access rights), A.8.15 (Logging), A.5.36 (Compliance with policies, rules and standards)
 
 **Treatment recommendation (Mitigate):**
@@ -109,13 +109,13 @@
 
 ---
 
-## CRM-R04 — Customer account takeover due to weak or absent MFA
+## CRM-R04 (Customer account takeover due to weak or absent MFA)
 
 **Risk description:** If a customer administrator's login credentials are compromised (via credential stuffing, phishing, or reuse from another breach) and MFA is not enforced on their account, an attacker could gain full access to that customer's CRM tenant, including exporting their entire customer database.
 
-**Threat / Vulnerability:** Credential stuffing using breached password lists; MFA currently optional rather than enforced at the platform level.
+**Threat / Vulnerability:** Credential stuffing using breached password lists MFA currently optional rather than enforced at the platform level.
 
-**Existing controls:** MFA available (TOTP) but opt-in for customer users; password complexity policy enforced; anomalous login detection (new device/location) sends an email alert but does not block the session.
+**Existing controls:** MFA available (TOTP) but opt-in for customer users password complexity policy enforced anomalous login detection (new device/location) sends an email alert but does not block the session.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -123,7 +123,7 @@
 | **Residual** | 2 – Unlikely | 4 – Major | **Medium (8)** |
 
 **Framework mapping:**
-- ACSC Essential Eight: *Multi-Factor Authentication* (ML1 — available but not enforced; target ML2)
+- ACSC Essential Eight: *Multi-Factor Authentication* (ML1, available but not enforced target ML2)
 - ISO/IEC 27001:2022 Annex A: A.8.5 (Secure authentication), A.5.17 (Authentication information)
 
 **Treatment recommendation (Mitigate):**
@@ -131,17 +131,17 @@
 2. Move anomalous login detection from alert-only to step-up authentication or session block pending verification.
 3. Publish an MFA enforcement roadmap to customers to support their own compliance obligations (many are regulated entities themselves).
 
-**Owner:** Product Owner · **Target date:** Q3 2026 (in progress — pilot with 20 customers underway) · **Status:** In Progress
+**Owner:** Product Owner · **Target date:** Q3 2026 (in progress pilot with 20 customers underway) · **Status:** In Progress
 
 ---
 
-## CRM-R05 — Unpatched application and OS vulnerabilities exploited
+## CRM-R05 (Unpatched application and OS vulnerabilities exploited)
 
 **Risk description:** If known vulnerabilities in the application stack (frameworks, libraries) or underlying EC2/container OS images are not patched in a timely manner, an external attacker could exploit a publicly known CVE to gain unauthorised access to production systems.
 
-**Threat / Vulnerability:** External attacker scanning for known CVEs; internal patch cadence not formally tracked against a defined SLA.
+**Threat / Vulnerability:** External attacker scanning for known CVEs internal patch cadence not formally tracked against a defined SLA.
 
-**Existing controls:** Dependabot/Snyk scanning on application repositories; base container images rebuilt monthly; no formal patch SLA or exception process; staging environment used before production deploys.
+**Existing controls:** Dependabot/Snyk scanning on application repositories base container images rebuilt monthly no formal patch SLA or exception process staging environment used before production deploys.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -155,19 +155,19 @@
 **Treatment recommendation (Mitigate):**
 1. Define and publish a formal patch SLA (critical: 48 hours, high: 7 days, medium: 30 days) with monthly compliance reporting.
 2. Introduce automated dependency-update PRs with mandatory CI test gates to reduce manual patching lag.
-3. Run an external penetration test annually and after major architecture changes; track findings to closure.
+3. Run an external penetration test annually and after major architecture changes track findings to closure.
 
-**Owner:** Cloud Platform Lead · **Target date:** Q3 2026 (SLA defined; reporting build in progress) · **Status:** In Progress
+**Owner:** Cloud Platform Lead · **Target date:** Q3 2026 (SLA defined reporting build in progress) · **Status:** In Progress
 
 ---
 
-## CRM-R06 — Multi-tenant data leakage between customer organisations
+## CRM-R06 (Multi-tenant data leakage between customer organisations)
 
 **Risk description:** If a defect in tenant isolation logic (application-level row security, API authorisation checks) allows one customer's data to be visible to another customer, this constitutes a serious data breach affecting multiple customers simultaneously and would likely be catastrophic for customer trust.
 
-**Threat / Vulnerability:** Application-layer logic error (broken object-level authorisation — OWASP API Security Top 10, API1:2023) introduced through a code defect; insufficient automated test coverage for cross-tenant scenarios.
+**Threat / Vulnerability:** Application-layer logic error (broken object-level authorisation OWASP API Security Top 10, API1:2023) introduced through a code defect insufficient automated test coverage for cross-tenant scenarios.
 
-**Existing controls:** Row-level security enforced at the database layer via tenant_id; code review required for all PRs touching data access layers; automated integration tests cover the primary tenant-isolation paths but not all API endpoints.
+**Existing controls:** Row-level security enforced at the database layer via tenant_id code review required for all PRs touching data access layers automated integration tests cover the primary tenant-isolation paths but not all API endpoints.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -187,13 +187,13 @@
 
 ---
 
-## CRM-R07 — Third-party / API supply chain compromise
+## CRM-R07 (Third-party / API supply chain compromise)
 
 **Risk description:** If a third-party integration (e.g. Stripe billing, transactional email provider, or an OAuth-connected customer integration) is compromised or suffers its own breach, customer or payment-adjacent data flowing through that integration could be exposed, and CloudReach's platform could be used as a pivot point.
 
-**Threat / Vulnerability:** Supply chain compromise or breach at a third-party vendor; over-privileged API scopes granted to integrations; no formal vendor security review process.
+**Threat / Vulnerability:** Supply chain compromise or breach at a third-party vendor over privileged API scopes granted to integrations no formal vendor security review process.
 
-**Existing controls:** Payment processing outsourced to a PCI-DSS compliant provider (Stripe) — CloudReach does not store card data directly; API keys for third parties stored in a secrets manager (not in code); no formal annual vendor security assessment process currently in place.
+**Existing controls:** Payment processing outsourced to a PCI-DSS compliant provider (Stripe)  CloudReach does not store card data directly API keys for third parties stored in a secrets manager (not in code) no formal annual vendor security assessment process currently in place.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -212,13 +212,13 @@
 
 ---
 
-## CRM-R08 — DDoS attack against customer-facing application
+## CRM-R08 (DDoS attack against customer-facing application)
 
 **Risk description:** If CloudReach's application is targeted by a volumetric or application-layer DDoS attack, customers could experience service degradation or outage, affecting SLA commitments and customer trust.
 
-**Threat / Vulnerability:** External threat actor (hacktivist, extortion attempt, or opportunistic attack); reliance on cloud-native scaling without a dedicated DDoS mitigation service.
+**Threat / Vulnerability:** External threat actor (hacktivist, extortion attempt, or opportunistic attack) reliance on cloud-native scaling without a dedicated DDoS mitigation service.
 
-**Existing controls:** AWS Shield Standard (included by default); CloudFront CDN in front of the application; auto-scaling configured for the application tier.
+**Existing controls:** AWS Shield Standard (included by default) CloudFront CDN in front of the application auto-scaling configured for the application tier.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -231,17 +231,17 @@
 **Treatment recommendation (Accept):**
 Given AWS Shield Standard and CDN coverage already reduce residual likelihood to Rare, and the cost of AWS Shield Advanced is not currently justified by customer SLA commitments, this risk is **formally accepted** at its current residual rating. Recommend revisiting if the customer base grows to include higher-profile or higher-risk-profile organisations, or after any actual DDoS event.
 
-**Owner:** Cloud Platform Lead · **Review date:** Annually, or upon material change · **Status:** Accepted (sign-off recorded — see governance log)
+**Owner:** Cloud Platform Lead · **Review date:** Annually, or upon material change · **Status:** Accepted (sign-off recorded, see governance log)
 
 ---
 
-## CRM-R09 — Incomplete offboarding leaves former staff with system access
+## CRM-R09 (Incomplete offboarding leaves former staff with system access)
 
 **Risk description:** If an employee's access to CloudReach systems (source code, cloud console, CRM admin, Google Workspace) is not fully revoked at termination, a disgruntled or careless former employee could retain the ability to access or exfiltrate company or customer data.
 
-**Threat / Vulnerability:** Manual, checklist-driven offboarding process with no single source of truth for "all systems an employee has access to"; no automated deprovisioning tied to HRIS status change.
+**Threat / Vulnerability:** Manual, checklist-driven offboarding process with no single source of truth for "all systems an employee has access to" no automated deprovisioning tied to HRIS status change.
 
-**Existing controls:** Offboarding checklist exists and is used by People & Culture in coordination with IT; primary systems (Google Workspace, AWS SSO) are deprovisioned same-day; secondary/individual tool access (e.g. personal API tokens, third-party SaaS logins) is inconsistently tracked.
+**Existing controls:** Offboarding checklist exists and is used by People & Culture in coordination with IT primary systems (Google Workspace, AWS SSO) are deprovisioned same-day secondary/individual tool access (e.g. personal API tokens, third-party SaaS logins) is inconsistently tracked.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -261,13 +261,13 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 
 ---
 
-## CRM-R10 — Hardcoded API keys and secrets exposed in source repositories
+## CRM-R10 (Hardcoded API keys and secrets exposed in source repositories)
 
 **Risk description:** If a developer accidentally commits an API key, database credential, or other secret into a source code repository, and that repository is later made public, forked, or accessed by an unauthorised party, those credentials could be used to access production systems or third-party services.
 
-**Threat / Vulnerability:** Developer error; absence of automated pre-commit secret scanning at the time of the incident this control gap was identified; historical commits in repository history predating current controls.
+**Threat / Vulnerability:** Developer error absence of automated pre-commit secret scanning at the time of the incident this control gap was identified historical commits in repository history predating current controls.
 
-**Existing controls:** GitHub secret scanning enabled on all repositories (detects known credential patterns); secrets manager used for new development; no historical repository history scan has been completed to confirm no legacy exposure remains.
+**Existing controls:** GitHub secret scanning enabled on all repositories (detects known credential patterns) secrets manager used for new development no historical repository history scan has been completed to confirm no legacy exposure remains.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -286,13 +286,13 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 
 ---
 
-## CRM-R11 — Business email compromise targeting Finance (invoice fraud)
+## CRM-R11 (Business email compromise targeting Finance, invoice fraud)
 
 **Risk description:** If a Finance team member receives a spoofed or compromised email impersonating a supplier, executive, or customer requesting a change to bank details or an urgent payment, CloudReach could suffer direct financial loss through fraudulent payment.
 
-**Threat / Vulnerability:** Social engineering / business email compromise (BEC); this remains one of the most reported and highest-loss cybercrime categories for Australian businesses per the ACSC Annual Cyber Threat Report.
+**Threat / Vulnerability:** Social engineering / business email compromise (BEC) this remains one of the most reported and highest-loss cybercrime categories for Australian businesses per the ACSC Annual Cyber Threat Report.
 
-**Existing controls:** Dual-authorisation required for payments over $5,000; DMARC/DKIM/SPF configured on the corporate domain; no verbal/callback verification requirement currently mandated for bank detail changes.
+**Existing controls:** Dual-authorisation required for payments over $5,000 DMARC/DKIM/SPF configured on the corporate domain no verbal/callback verification requirement currently mandated for bank detail changes.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -304,21 +304,21 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 - ISO/IEC 27001:2022 Annex A: A.6.3 (Awareness, education and training), A.5.14 (Information transfer)
 
 **Treatment recommendation (Mitigate):**
-1. Mandate a verbal callback (to a known, independently sourced phone number — never one provided in the email) for any request to change supplier bank details, regardless of apparent sender authority.
+1. Mandate a verbal callback (to a known, independently sourced phone number never one provided in the email) for any request to change supplier bank details, regardless of apparent sender authority.
 2. Run targeted phishing/BEC simulation exercises for the Finance team quarterly.
-3. Consider cyber insurance coverage that explicitly includes social-engineering/funds-transfer fraud (many policies exclude it by default) — see also treatment overlap with Transfer options.
+3. Consider cyber insurance coverage that explicitly includes social-engineering/funds-transfer fraud (many policies exclude it by default)  see also treatment overlap with Transfer options.
 
 **Owner:** CFO · **Target date:** Q3 2026 · **Status:** Open
 
 ---
 
-## CRM-R12 — Failure to meet Notifiable Data Breach obligations
+## CRM-R12 (Failure to meet Notifiable Data Breach obligations)
 
 **Risk description:** If a data breach affecting customer PII occurs and CloudReach does not identify, assess, and (where required) notify the OAIC and affected individuals within the statutory timeframe, CloudReach could face regulatory penalties, in addition to the reputational damage of the breach itself.
 
 **Threat / Vulnerability:** Absence of a tested, documented incident response and breach-assessment process aligned to the *Notifiable Data Breaches (NDB) scheme* under the *Privacy Act 1988 (Cth)*.
 
-**Existing controls:** A basic incident response plan exists but has not been tested via a tabletop exercise in the last 12 months; no formally documented NDB eligible-data-breach assessment procedure; Privacy Officer role is assigned but not resourced as a dedicated function.
+**Existing controls:** A basic incident response plan exists but has not been tested via a tabletop exercise in the last 12 months no formally documented NDB eligible-data-breach assessment procedure Privacy Officer role is assigned but not resourced as a dedicated function.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -338,13 +338,13 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 
 ---
 
-## CRM-R13 — Shadow IT / unsanctioned SaaS tools used by staff
+## CRM-R13 (Shadow IT / unsanctioned SaaS tools used by staff)
 
 **Risk description:** If staff sign up for and use unapproved SaaS tools (e.g. AI coding assistants, file-sharing tools, note-taking apps) to handle company or customer data, that data falls outside CloudReach's security controls and visibility, increasing the risk of an undetected breach or data residency/compliance issue.
 
 **Threat / Vulnerability:** Well-intentioned productivity-seeking behaviour by staff, enabled by an absence of a SaaS approval process or CASB-style visibility tooling.
 
-**Existing controls:** Acceptable use policy exists and is signed at onboarding; no technical control (CASB, DNS filtering) currently monitors or restricts SaaS sign-ups; no defined process for staff to request new tool approval.
+**Existing controls:** Acceptable use policy exists and is signed at onboarding no technical control (CASB, DNS filtering) currently monitors or restricts SaaS sign-ups no defined process for staff to request new tool approval.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -363,13 +363,13 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 
 ---
 
-## CRM-R14 — Backup restoration failure during a real incident
+## CRM-R14 (Backup restoration failure during a real incident)
 
-**Risk description:** If backups exist but have not been tested for successful restoration, CloudReach could discover — during an actual ransomware or data-loss incident — that backups are incomplete, corrupted, or too slow to restore within an acceptable Recovery Time Objective, extending the outage and potentially resulting in permanent data loss.
+**Risk description:** If backups exist but have not been tested for successful restoration, CloudReach could discover during an actual ransomware or data-loss incident that backups are incomplete, corrupted, or too slow to restore within an acceptable Recovery Time Objective, extending the outage and potentially resulting in permanent data loss.
 
-**Threat / Vulnerability:** "Backups exist" is frequently mistaken for "recovery works" — untested backups are a common latent failure mode exposed only during a real incident.
+**Threat / Vulnerability:** "Backups exist" is frequently mistaken for "recovery works" untested backups are a common latent failure mode exposed only during a real incident.
 
-**Existing controls:** Automated daily database backups with 30-day retention; backups stored in a separate AWS account/region; no documented, timed restoration test has been performed in the last 12 months.
+**Existing controls:** Automated daily database backups with 30-day retention backups stored in a separate AWS account/region no documented, timed restoration test has been performed in the last 12 months.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -377,7 +377,7 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 | **Residual** | 2 – Unlikely | 3 – Moderate | **Medium (6)** |
 
 **Framework mapping:**
-- ACSC Essential Eight: *Regular Backups* (ML1 — backups exist and are isolated, but restoration is untested; target ML2/ML3)
+- ACSC Essential Eight: *Regular Backups* (ML1 backups exist and are isolated, but restoration is untested target ML2/ML3)
 - ISO/IEC 27001:2022 Annex A: A.8.13 (Information backup), A.5.29 (Information security during disruption), A.5.30 (ICT readiness for business continuity)
 
 **Treatment recommendation (Mitigate):**
@@ -389,13 +389,13 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 
 ---
 
-## CRM-R15 — Cloud provider regional outage (AWS ap-southeast-2)
+## CRM-R15 (Cloud provider regional outage)
 
 **Risk description:** If AWS experiences a significant outage in the ap-southeast-2 (Sydney) region, CloudReach's application could become unavailable to all customers simultaneously, regardless of CloudReach's own control maturity, since the platform is not currently deployed multi-region.
 
-**Threat / Vulnerability:** Cloud provider infrastructure failure or regional disruption — a low-frequency but high-visibility event; single-region architecture creates a hard dependency.
+**Threat / Vulnerability:** Cloud provider infrastructure failure or regional disruption, a low-frequency but high-visibility event single-region architecture creates a hard dependency.
 
-**Existing controls:** Multi-AZ deployment within the region (protects against single data-centre failure, not full regional outage); documented disaster recovery runbook exists; no active multi-region failover capability.
+**Existing controls:** Multi-AZ deployment within the region (protects against single data-centre failure, not full regional outage) documented disaster recovery runbook exists no active multi-region failover capability.
 
 | | Likelihood | Impact | Rating |
 |---|---|---|---|
@@ -408,7 +408,7 @@ Given AWS Shield Standard and CDN coverage already reduce residual likelihood to
 **Treatment recommendation (Accept):**
 Full multi-region active-active architecture is assessed as disproportionate to the current business impact and customer SLA commitments (99.9%, not 99.99%). Multi-AZ resilience already addresses the most probable failure scenarios. This risk is **formally accepted** at its current residual rating, with a commitment to re-assess if CloudReach signs an enterprise customer requiring a higher availability SLA.
 
-**Owner:** Cloud Platform Lead · **Review date:** Annually, or upon material change to customer SLA commitments · **Status:** Accepted (sign-off recorded — see governance log)
+**Owner:** Cloud Platform Lead · **Review date:** Annually, or upon material change to customer SLA commitments · **Status:** Accepted (sign-off recorded, see governance log)
 
 ---
 
