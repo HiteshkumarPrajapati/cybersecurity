@@ -3,7 +3,7 @@
 **Entity profile:** CloudReach CRM is a fictional B2B SaaS company providing a multi-tenant customer relationship management platform to ~400 mid-market Australian and NZ customers. It processes customer PII, sales/contract data, and integrates with third-party billing (Stripe) and email providers. Hosted on AWS (ap-southeast-2), ~45 staff, no dedicated CISO, security function sits under the Head of Engineering with GRC support.
 
 **Assessment date:** July 2026 · **Assessed by:** GRC Analyst (portfolio exercise) · **Next review:** Quarterly
-**Rating scale, matrix, and methodology:** see [`notes/risk-rating-methodology.md`](notes/risk-rating-methodology.md)
+**Rating scale, matrix, and methodology:** see [`Risk Register`](risk-rating-methodology.md)
 
 ---
 
