@@ -1,11 +1,16 @@
 # FinSight Analytics (Third-Party AI Procurement GRC Review)
 
-**Organisation:** FinSight Analytics *(fictional)*
+**Organisation:** FinSight Analytics *(fictional for Simmulation)*
+
 **Sector:** Financial Services / Fintech
+
 **Project Type:** Third-Party AI Risk Assessment · Vendor Due Diligence · Regulatory Compliance Review
+
 **Classification:** Internal  Restricted
+
 **Project Lead:** GRC Analyst
-**Review Date:** 2025
+
+**Review Date:** 2026
 
 ---
 
@@ -114,6 +119,3 @@ grc-finsight-ai/
 | OAIC Privacy Register | Privacy Act obligation reference |
 | APRA Prudential Practice Guides | CPS 234 interpretation guidance |
 
----
-
-*This project is a sample GRC portfolio deliverable. FinSight Analytics and VeriGuard AI are fictional organisations. All scenarios, figures, and findings are created for professional skills demonstration.*
