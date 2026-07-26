@@ -1,8 +1,8 @@
-# Vendor AI Risk Assessment — VeriGuard AI Platform
+# Vendor AI Risk Assessment (VeriGuard AI Platform)
 
 **Document ID:** FINSIGHT-AI-VAR-001
 **Version:** 1.0
-**Classification:** Internal — Restricted
+**Classification:** Internal, Restricted
 **Owner:** GRC Analyst / Chief Risk Officer
 **Review Cycle:** Annually and prior to contract renewal
 **Frameworks:** NIST AI RMF · ISO/IEC 42001:2023 · APRA CPS 234 · AS ISO 31000:2018
@@ -13,7 +13,7 @@
 
 This assessment identifies, rates, and documents risk treatment plans for risks arising from FinSight Analytics' proposed procurement of the VeriGuard AI fraud detection platform. The assessment is structured in accordance with the NIST AI RMF (Govern / Map / Measure / Manage) and AS ISO 31000:2018 risk principles.
 
-All risks are assessed from FinSight's perspective as the regulated entity and data controller — not the vendor's. Regulatory liability for customer data handling and AI-driven decisions affecting customers rests with FinSight, regardless of where in the supply chain the failure occurs.
+All risks are assessed from FinSight's perspective as the regulated entity and data controller not the vendor's. Regulatory liability for customer data handling and AI-driven decisions affecting customers rests with FinSight, regardless of where in the supply chain the failure occurs.
 
 ---
 
@@ -52,7 +52,7 @@ All risks are assessed from FinSight's perspective as the regulated entity and d
 
 ## Risk Register
 
-### VAR-001 — AI Model Produces Incorrect Fraud Flags — Wrongful Customer Transaction Blocks
+### VAR-001 => AI Model Produces Incorrect Fraud Flag, Wrongful Customer Transaction Blocks
 
 | Field | Detail |
 |-------|--------|
@@ -86,7 +86,7 @@ No false positive rate benchmarks have been provided by the vendor. No explainab
 
 ---
 
-### VAR-002 — AI Decision Cannot Be Explained to Customer or Regulator
+### VAR-002 => AI Decision Cannot Be Explained to Customer or Regulator
 
 | Field | Detail |
 |-------|--------|
@@ -119,7 +119,7 @@ Vendor has not disclosed whether any explainability capability exists. Standard 
 
 ---
 
-### VAR-003 — Customer Financial Data Processed Offshore Without Adequate Privacy Protections
+### VAR-003 => Customer Financial Data Processed Offshore Without Adequate Privacy Protections
 
 | Field | Detail |
 |-------|--------|
@@ -153,7 +153,7 @@ Offshore processing confirmed. APP 8 assessment not conducted. Privacy notice no
 
 ---
 
-### VAR-004 — Vendor Data Breach Exposing FinSight Customer Records
+### VAR-004 => Vendor Data Breach Exposing FinSight Customer Records
 
 | Field | Detail |
 |-------|--------|
@@ -166,7 +166,7 @@ Offshore processing confirmed. APP 8 assessment not conducted. Privacy notice no
 | **Risk Owner** | Chief Information Security Officer |
 
 **Risk Description**
-VeriGuard AI suffers a data breach or insider incident exposing FinSight customer financial data. As the data controller, FinSight holds primary regulatory liability under the Privacy Act 1988 NDB scheme — including notification obligations to the OAIC and affected customers — regardless of where the breach occurred. A breach of this nature at a regulated financial services firm carries significant APRA and ASIC scrutiny.
+VeriGuard AI suffers a data breach or insider incident exposing FinSight customer financial data. As the data controller, FinSight holds primary regulatory liability under the Privacy Act 1988 NDB scheme including notification obligations to the OAIC and affected customers regardless of where the breach occurred. A breach of this nature at a regulated financial services firm carries significant APRA and ASIC scrutiny.
 
 **Current State**
 Vendor holds claimed ISO 27001 certification (scope not verified). No SOC 2 Type II report available. Breach notification SLA not included in contract.
@@ -187,7 +187,7 @@ Vendor holds claimed ISO 27001 certification (scope not verified). No SOC 2 Type
 
 ---
 
-### VAR-005 — Vendor Uses FinSight Customer Data for Model Training
+### VAR-005 => Vendor Uses FinSight Customer Data for Model Training
 
 | Field | Detail |
 |-------|--------|
@@ -219,7 +219,7 @@ VeriGuard standard terms reviewed — Section 8.3 permits aggregated data use fo
 
 ---
 
-### VAR-006 — AI Model Drift Reduces Fraud Detection Effectiveness Undetected
+### VAR-006 => AI Model Drift Reduces Fraud Detection Effectiveness Undetected
 
 | Field | Detail |
 |-------|--------|
@@ -252,7 +252,7 @@ No model performance reporting obligation in proposed contract. No drift monitor
 
 ---
 
-### VAR-007 — Algorithmic Bias — Disproportionate Fraud Flags on Specific Customer Demographics
+### VAR-007 => Algorithmic Bias — Disproportionate Fraud Flags on Specific Customer Demographics
 
 | Field | Detail |
 |-------|--------|
@@ -285,7 +285,7 @@ No bias testing documentation provided. No model card available. Vendor has not 
 
 ---
 
-### VAR-008 — No Vendor Business Continuity — Fraud Detection Unavailable During Critical Period
+### VAR-008 => No Vendor Business Continuity — Fraud Detection Unavailable During Critical Period
 
 | Field | Detail |
 |-------|--------|
@@ -318,7 +318,7 @@ Proposed contract includes standard 99.5% uptime SLA. No business continuity doc
 
 ---
 
-### VAR-009 — Material Model Change Without FinSight Notification
+### VAR-009 => Material Model Change Without FinSight Notification
 
 | Field | Detail |
 |-------|--------|
@@ -351,7 +351,7 @@ Standard contract terms give vendor the right to update the platform without cli
 
 ---
 
-### VAR-010 — No Audit Right — FinSight Cannot Verify Vendor Security Controls
+### VAR-010 => No Audit Right — FinSight Cannot Verify Vendor Security Controls
 
 | Field | Detail |
 |-------|--------|
@@ -383,7 +383,7 @@ No audit right in proposed contract. Vendor ISO 27001 certification is claimed b
 
 ---
 
-### VAR-011 — Regulatory Change Affects Vendor's Ability to Operate in Australia
+### VAR-011 => Regulatory Change Affects Vendor's Ability to Operate in Australia
 
 | Field | Detail |
 |-------|--------|
@@ -412,7 +412,7 @@ Regulatory changes to AI use in financial services — from ASIC, APRA, Treasury
 
 ---
 
-### VAR-012 — Concentration Risk — Single Vendor for Critical Fraud Detection Function
+### VAR-012 => Concentration Risk — Single Vendor for Critical Fraud Detection Function
 
 | Field | Detail |
 |-------|--------|
@@ -466,4 +466,3 @@ FinSight would be entirely dependent on a single offshore AI vendor for fraud de
 
 ---
 
-*This document is part of a sample GRC portfolio project. All organisations and scenarios are fictional.*
